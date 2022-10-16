@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :users
+  resources :members
   resources :jets
   resources :arrivals
   resources :departures
   resources :bookings
   # resources :welcomes
+  get "/profile", to: "session#profile"
+  post "/login", to "session#create"
+  get "/me", to "users#show"
+  delete "/logout", to: "session#destroy"
   
 
 	

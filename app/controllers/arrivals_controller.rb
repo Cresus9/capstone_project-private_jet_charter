@@ -1,19 +1,19 @@
 class ArrivalsController < ApplicationController
   before_action :set_arrival, only: [:show, :update, :destroy]
 
-  # GET /arrivals
+  
   def index
     @arrivals = Arrival.all
 
     render json: @arrivals
   end
 
-  # GET /arrivals/1
+  
   def show
     render json: @arrival
   end
 
-  # POST /arrivals
+  
   def create
     @arrival = Arrival.new(arrival_params)
 
@@ -24,7 +24,7 @@ class ArrivalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /arrivals/1
+  
   def update
     if @arrival.update(arrival_params)
       render json: @arrival
@@ -33,14 +33,13 @@ class ArrivalsController < ApplicationController
     end
   end
 
-  # DELETE /arrivals/1
+  
   def destroy
     @arrival.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_arrival
+    
       @arrival = Arrival.find(params[:id])
     end
 
