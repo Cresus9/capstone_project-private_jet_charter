@@ -1,42 +1,32 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :update, :destroy]
+  skip_before_action :authorized
 
   # GET /members
   def index
     @members = Member.all
-
     render json: @members
   end
 
-  # GET /members/1
-  def show
-    render json: @member
+
+  def login
+    user = Member.find_by(id: session[:user_id])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
-  # POST /members
   def create
-    @member = Member.new(member_params)
-
-    if @member.save
-      render json: @member, status: :created, location: @member
-    else
-      render json: @member.errors, status: :unprocessable_entity
-    end
+    member = Member.create(member_params)
+    render json: member, status: :created
   end
-
   # PATCH/PUT /members/1
-  def update
-    if @member.update(member_params)
-      render json: @member
-    else
-      render json: @member.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /members/1
-  def destroy
-    @member.destroy
-  end
+  # def update
+  # user = @member.update!(member_params)
+  #   render json: @member status: :ok
+  # end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -46,6 +36,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:first_name, :last_name, :email, :password_digest, :phone_number)
+      params.permit(:first_name, :last_name, :email, :password_digest, :phone_number)
     end
-end
+  end

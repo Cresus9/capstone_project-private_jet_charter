@@ -8,8 +8,7 @@
 Jet.destroy_all
 Booking.destroy_all
 Member.destroy_all
-Arrival.destroy_all
-Departure.destroy_all
+
 
 Member.create(first_name:"Thierry" ,last_name:"Yabre" ,email:"thierry@gmail.com" ,password_digest:"123" ,phone_number:"233-322-3332")
 Member.create(first_name:"Paul" ,last_name:"Numbier" ,email:"Paul@gmail.com" ,password_digest:"178" ,phone_number:"289-322-3332")
@@ -20,14 +19,17 @@ Jet.create(model:"Bombardier Global 5000" ,manufacturer:"Bombardier" ,image:"htt
 Jet.create(model:"Gulfstream V" ,manufacturer:"Gulfstream " ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/gulfstream-v-7.jpg" ,max_range:"7300" ,total_passenger:"16" ,speed:"528")
 Jet.create(model:"Airbus A-319CJ" ,manufacturer:"Airbus" ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/airbus-a319-cj-3.jpg" ,max_range:"6897" ,total_passenger:"19" ,speed:"629")
 
+# Booking.create(total_passenger:"7",date:"10-25-2022", time:"09:30PM",from:"New York City",to:"Boston" is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
+Booking.create(total_passenger:"4",date:"10-29-2022", time:"10:00PM",from:"Miami",to:"New Haven" ,is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
+Booking.create(total_passenger:"6",date:"10-29-2022", time:"9:00PM",from:"Miami",to:"Las Vegas" ,is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
+Booking.create(total_passenger:"3",date:"10-30-2022", time:"11:00PM", from:"Columbus",to:"Houston" ,is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
 
-Booking.create(number_of_passenger:"7", is_oneway:true ,jet_id:Jet.all.sample.id ,user_id:Member.all.sample.id)
-Booking.create(number_of_passenger:"4", is_oneway:true ,jet_id:Jet.all.sample.id ,user_id:Member.all.sample.id)
 
-Departure.create(date:"10-25-2022", time:"09:30PM", location:"New York City", booking_id:Booking.all.sample.id)
-Departure.create(date:"10-29-2022", time:"10:00PM", location:"Miami", booking_id:Booking.all.sample.id)
+# Departure.create(date:"10-25-2022", time:"09:30PM", location:"New York City", booking_id:Booking.all.sample.id)
+# Departure.create(date:"10-29-2022", time:"10:00PM", location:"Miami", booking_id:Booking.all.sample.id)
+# Departure.create(date:"10-30-2022", time:"11:00PM", location:"Columbus", booking_id:Booking.all.sample.id)
 
-Arrival.create(date:"10-26-2022", time:"05:45AM" ,location:"Los Angeles", booking_id:Booking.all.sample.id)
-Arrival.create(date:"10-29-2022", time:"11:55PM" ,location:"New York City", booking_id:Booking.all.sample.id)
-
+# Arrival.create(date:"10-26-2022", time:"05:45AM" ,location:"Los Angeles", booking_id:Booking.all.sample.id)
+# Arrival.create(date:"10-29-2022", time:"11:55PM" ,location:"New York City", booking_id:Booking.all.sample.id)
+# Arrival.create(date:"10-30-2022", time:"11:00PM" ,location:"New Haven", booking_id:Booking.all.sample.id)
 

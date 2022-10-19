@@ -1,14 +1,12 @@
 class SessionController < ApplicationController
-    def profile
-        session[:session_hello] ||="world"
-        cookies[:cookies_hello] ||="world"
-        render json: { session:session, cookies:cookies.to_hash }
-    end
-
+    skip_before_action :authorized, only: :create
     def Create
         User.find(params[:email])
-        session[:user_id] = user.id
-        render json: user
+        if user&.authenticate(password)
+            session[:user_id] = user.id
+            render json: user :created
+        else
+            render json: { error: {login: "Invalid username or password" }}, status: :unauthorized
     end
     def destroy
         session.delete :user_id
