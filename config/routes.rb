@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
-  resources :users
-  resources :jets
-  resources :arrivals
-  resources :departures
   resources :bookings
+  resources :members
+  resources :jets
   # resources :welcomes
+  post "/login", to: "members#login"
+  get "/profile", to: "members#profile"
+  delete "/logout", to: "session#destroy"
+  post "/signup", to: "members#create"
+
+  get 'bookings/member/:member_id', to: "bookings#by_member"
+  get 'booking/member/:member_id', to: "bookings#upcoming"
   
 
 	

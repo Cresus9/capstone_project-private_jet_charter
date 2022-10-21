@@ -1,3 +1,3 @@
 class BookingSerializer < ActiveModel::Serializer
-  attributes :id, :number_of_passenger, :is_oneway, :user_id, :jet_id
+  attributes :id, :total_passenger, :date, :time, :from, :to, :is_oneway, :member_id, :jet_id
 end
