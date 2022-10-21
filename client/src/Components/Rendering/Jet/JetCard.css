@@ -1,0 +1,14 @@
+.jet_card{
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.jet_card_image{
+    height: 100%;
+	width: 200px;
+}
+.jet_card_info{
+    background-color:azure
+}

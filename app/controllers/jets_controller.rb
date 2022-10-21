@@ -1,11 +1,10 @@
 class JetsController < ApplicationController
   skip_before_action :authorized
-  before_action :set_jet, only: [:show, :update, :destroy]
+ 
 
   # GET /jets
   def index
     @jets = Jet.all
-
     render json: @jets
   end
 
@@ -47,6 +46,6 @@ class JetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def jet_params
-      params.require(:jet).permit(:model, :manufacturer, :image, :max_range, :total_passenger, :speed)
+      params.permit(:model, :manufacturer, :image, :max_range, :total_passenger, :speed)
     end
 end

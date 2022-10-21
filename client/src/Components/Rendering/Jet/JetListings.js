@@ -1,5 +1,5 @@
 import React,{ useEffect,useState } from 'react'
-import JetCard from './Components/Rendering/Jet/JetCard'
+import JetCard from './JetCard'
 import './JetListings.css'
 
 export default function JetListings() {
@@ -18,14 +18,15 @@ useEffect(()=>{
     })
 }, []);
 
-console.log(listings)
+const getList = listings.map((listing)=>
+<JetCard key={listing.id} jet={listing}/>)
+
 
 
 
   return (
-    <div>
-      {listings.map((listing)=>
-      <JetCard key={listing.id} jet={listing}/>)}
+    <div className='jet_div'>
+      {getList}
 
     </div>
   )

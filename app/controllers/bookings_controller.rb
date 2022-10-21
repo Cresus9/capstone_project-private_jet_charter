@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   skip_before_action :authorized
-  before_action :set_booking, only: [:show, :update, :destroy]
 
   # GET /bookings
   def index
@@ -14,26 +13,34 @@ class BookingsController < ApplicationController
     render json: @booking
   end
 
-  def by_patient
+  def by_member
 		member_id = params[:member_id]
 		bookings = Booking.where(member_id: member_id).order(date: :desc, time: :desc)
 		if bookings
-			render json: appointments, status: :ok
+			render json: bookings, status: :ok
 		else
 			render json: { error: "Booking not found" }, status: :not_found
 		end
 	end
 
+  def upcoming
+		today = Date.today.to_time.iso8601.slice(0, 2)
+		member_id = params[:member_id]
+		bookings = Booking.where(["date >= ? and member_id = ?", today, member_id]).order(:date, :time)
+		if bookings
+			render json: bookings, status: :ok
+		else
+			render json: { error: "bookings not found" }, status: :not_found
+		end
+	end
+
+
   # POST /bookings
   def create
-    @booking = Booking.new(booking_params)
-
-    if @booking.save
-      render json: @booking, status: :created, location: @booking
-    else
-      render json: @booking.errors, status: :unprocessable_entity
-    end
+    booking=Booking.create!(booking_params)
+    render json: booking
   end
+   
 
   # PATCH/PUT /bookings/1
   def update
@@ -57,6 +64,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:total_passenger, :date, :time, :from, :to, :is_oneway, :member_id, :jet_id)
+      params.permit(:total_passenger, :date, :time, :from, :to,)
     end
 end
