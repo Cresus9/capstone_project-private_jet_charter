@@ -2,6 +2,7 @@ import React from 'react'
 // import './UserBookingCard.css'
 
 export default function UserBookingCard({booking}) {
+  console.log(booking)
   return (
     <div>
         <h3>Flight Info:</h3>

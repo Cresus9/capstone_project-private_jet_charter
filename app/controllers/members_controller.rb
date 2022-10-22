@@ -1,10 +1,17 @@
 class MembersController < ApplicationController
-  before_action :authorized, only: [:show]
+  skip_before_action :authorized
 
 
   def index
     @members = Member.all
     render json: @members
+  end
+
+  
+
+  def show
+    member= Member.find(params[:member_id])
+    render json: member
   end
 
 

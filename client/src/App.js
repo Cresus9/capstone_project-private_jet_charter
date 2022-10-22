@@ -45,15 +45,17 @@ const [logInData, setLogInData]= useState(logInBody)
       })
       .then (resp =>resp.json())
       .then (data => {
-        console.log(data)
+        // console.log(data)
         if(data.user){
-          setUser(data.user)}
+          setUser(data.user)
+          console.log(data.user)}
       });
     }
   }, []);
-  
+
+
 useEffect(()=>{
-  console.log(navigate)
+  // console.log(navigate)
 },[navigate])
 
 
@@ -79,18 +81,20 @@ useEffect(()=>{
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data.user);
       if(data["user"]){
+        // console.log(data.user);
         localStorage.setItem("jwt", data.token);
-        setUser({
-          email: data.user
-        });
+        setUser(
+          data.user
+        );
         navigate('/profil')
       }else{
         alert(data["error"])
       }
     });
   }
+  // console.log(setUser)
 
 
 
@@ -112,8 +116,8 @@ useEffect(()=>{
   
 return (
     <div className="App">
-      < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout}/>
-      {/* <Profil /> */}
+      < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout} user={user} setUser={setUser}/>
+      //  <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser}/>
       <JetListings />
       <Routes>
           <Route path="/about" element={<About />} />

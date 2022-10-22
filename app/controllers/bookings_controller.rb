@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
 
   def upcoming
 		today = Date.today.to_time.iso8601.slice(0, 2)
-		member_id = params[:member_id]
+		member_id = (params[:member_id])
 		bookings = Booking.where(["date >= ? and member_id = ?", today, member_id]).order(:date, :time)
 		if bookings
 			render json: bookings, status: :ok

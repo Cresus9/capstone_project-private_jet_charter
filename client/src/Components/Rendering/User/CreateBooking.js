@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function InitialBooking({use, bookings, setBookings}) {
+export default function InitialBooking({jet,user, bookings, setBookings}) {
 
 
 
@@ -15,11 +15,11 @@ export default function InitialBooking({use, bookings, setBookings}) {
     from:"",
     to:"",
   }
-  const [bookingForm, setBookingForm ]= useState({...form})
+  const [bookingForm, setBookingForm ]= useState(form)
   
   const changeHandler=(e)=>{
     const update={
-      ...bookings,
+      ...bookingForm,
       [e.target.name]: e.target.value
     }
     setBookingForm(update)
@@ -27,10 +27,10 @@ export default function InitialBooking({use, bookings, setBookings}) {
 
   const formHandler=(e)=>{
     e.preventDefault()
-    if (member && jet){
+    if (user && jet){
       const newBooking ={
         ...bookingForm,
-        member_id: member_id,
+        user_id: user_id,
         jet_id: jet_id
       };
   
@@ -43,8 +43,8 @@ export default function InitialBooking({use, bookings, setBookings}) {
     })
       .then((res) => {
         if (res.ok) {
-          res.json().then((bookings) => {
-            setBookings(bookings);
+          res.json().then((booking) => {
+            setBookings(booking);
           });
         } else {
           res.json().then((errors) => console.log(errors));
@@ -74,7 +74,7 @@ export default function InitialBooking({use, bookings, setBookings}) {
             </label>
             <label> Date:
             <input
-             required
+             
               type='text'
               name='Date'
               placeholder='Date'
@@ -104,7 +104,7 @@ export default function InitialBooking({use, bookings, setBookings}) {
               type='text'
               name='to'
               value={bookingForm.to}
-              // onChange={}
+              onChange={changeHandler}
             />
             </label>
           <small>Select Jet</small>

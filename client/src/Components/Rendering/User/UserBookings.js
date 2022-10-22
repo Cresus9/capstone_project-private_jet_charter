@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from 'react'
 import UserBookingCard from './UserBookingCard'
 // import './Bookings.css'
 
-export default function Bookings({user},{setBookings}, {bookings}) {
+export default function Bookings({user,setBookings,bookings}) {
   
 
   useEffect(() =>{
@@ -18,6 +18,7 @@ export default function Bookings({user},{setBookings}, {bookings}) {
     })
 
   }, [])
+  console.log(bookings)
 
 
   return (
