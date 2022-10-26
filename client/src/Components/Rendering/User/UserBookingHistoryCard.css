@@ -1,0 +1,53 @@
+.booking-display{
+    border: 2px solid rgb(53, 44, 44);
+    border-radius:10px;
+    padding: 30px;
+    display: block;
+    background-color: white;
+   
+
+}
+.location{
+    border: 1px solid rgb(216, 201, 201);
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+
+}
+.location h6{
+    font-size: 23px;
+}
+.date{
+    border: 1px solid rgb(216, 201, 201);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+
+}
+.date-span h6{
+    font-size: 23px;
+}
+.passenger{
+    border: 1px solid rgb(216, 201, 201);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+
+}
+.passenger h5{
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.btn-manage{
+    background-color: rgb(102, 102, 199,0.4);
+    color: rgb(71, 71, 185);
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+.btn-manage:hover{
+    background-color: blue;
+    color: white;
+   
+}

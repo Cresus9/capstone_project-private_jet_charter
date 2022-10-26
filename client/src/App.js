@@ -1,5 +1,6 @@
 
 import './App.css';
+import 'rsuite/dist/rsuite.min.css';
 import React,{ useEffect, useState} from 'react';
 import Profil from './Components/Rendering/User/Profil'
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -9,12 +10,17 @@ import About from './Components/Welcome/About';
 import JetListings from './Components/Rendering/Jet/JetListings';
 import SignIn from './Components/Welcome/SignIn';
 import Login from './Components/Welcome/Login';
+import Footer from './Components/Welcome/Footer';
+import SignUp from './Components/Welcome/SignUp';
+import UserBookingHistory from './Components/Rendering/User/UserBookingHistory';
+import UserBookings from './Components/Rendering/User/UserBookings'
+import EditProfil from './Components/Rendering/User/EditProfil';
 
 
 function App() {
   
   const navigate = useNavigate();
-
+  const [content, setContent]=useState([])
 
    const signUpBody= {
     first_name :"",
@@ -31,6 +37,7 @@ const [logInData, setLogInData]= useState(logInBody)
   const [user, setUser]= useState({email:''})
   const [page, setPage]= useState("/")
   const [signUpData, setSignUpData]= useState({...signUpBody})
+  const [bookings, setBookings]=useState([])
 
 
 
@@ -112,18 +119,46 @@ useEffect(()=>{
     navigate("/")
 	}
 
+  // const list=(content)=>{
+  //   console.log(content)
+  // }
+  // list(content)
+  // console.log(content)
+  
+// console.log(content)
+
+const bookme=(e)=>{
+  if (user===user){
+    setUser(user)
+    navigate('./profil')
+  } else{ "Please sign in to proceed"}
+}
+
+
 
   
 return (
     <div className="App">
-      < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout} user={user} setUser={setUser}/>
-      //  <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser}/>
-      <JetListings />
+      {/* < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout} user={user} setUser={setUser}/> */}
+      {/* <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser} listings={content}/> */}
+      
+      
       <Routes>
+          <Route path='/jets' element={<JetListings jets={setContent}/>}/>
+          <Route path='profil/profile/update' element={ <EditProfil user={user} setUser={setUser}/>}/>
+          <Route path='/bookings/upcoming' element={ <UserBookings user={user} bookings={bookings} setBookings={setBookings} />}/>
+          <Route path='/bookings/history' element={<UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/>}/>
           <Route path="/about" element={<About />} />
-          <Route path="/profil" element={<Profil user={user} setUser={setUser} handleLogout={handleLogout}/>}/>
+          {/* <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content} /> */}
+          <Route path="/profil" element={<Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />}/>
+          <Route path="/about" element={ <About />}/>
+          <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
+          <Route path="/sign up" element={ <SignUp />}/>
           <Route path="/" element={ <Home />}/>
       </Routes>
+      <JetListings jets={setContent} bookme={bookme}/>
+      
+      <Footer />
     </div>
   );
 }

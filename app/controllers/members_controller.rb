@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  skip_before_action :authorized
+  before_action :authorized, only: [:show]
 
 
   def index
@@ -35,7 +35,7 @@ class MembersController < ApplicationController
     token = request.headers["token"]
     member_id = decode_token(token)
     if member_id
-      render json: Member.find(member_id)
+      render json:Member.find(member_id)
     else
       render json: {error: "401 incorrect token"}, status: 401
     end

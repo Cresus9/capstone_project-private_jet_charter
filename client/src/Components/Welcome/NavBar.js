@@ -32,28 +32,20 @@ export default function NavBar({onLogOut, user, signUpData, signUpUpdate, submit
 
  
   return (
-    <div>
-    
-      <Navbar bg="primary" variant="dark">
-        <Container>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">About</Nav.Link>
-            {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-          </Nav>
-        </Container>
-      </Navbar>
-    </div>
-     
-       
-  )
+    <>
+    <header className='header'>
+      <div>
+        <Link className='links' to="/">Home</Link>
+        <Link className='links' to="/about">About</Link>
+      </div>
+      <nav className='navbar'>
+        <ul>
+        <Link className='links' to="/sign in">Sign In</Link>
+        <Link className='links' to="/sign up">Sign Up</Link>
+        </ul>
+      </nav>
+    </header>
+    </>
+
+	)
 }
-     {/* <Link to="/"><p>Home</p></Link>
-		 <Link to="/about"><p>About</p></Link> */}
-    //  <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser}/>
-      {/* {renderSingnup} */}
-      {/* {renderSingnin} */}
-      {/* <button onClick={handleLogout}>Logout</button>
-    */}
-      
-  
