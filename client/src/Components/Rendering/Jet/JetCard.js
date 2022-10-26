@@ -1,22 +1,24 @@
 import React from 'react'
 import './JetCard.css'
 
-export default function JetCard({jet}) {
- 
+export default function JetCard({jet, bookme}) {
+
   return (
-    <div className='jet_card'>
-      <span>
-        <img src={jet.image} alt='' className='jet_card_image'/>
-      </span>
-      <span className='jet_card_info'>
-        <p>{jet.model} </p>
-        <p>{jet.manufacturer}</p>
-        {/* <p>{`${max_range}`}</p>
-        <p>{`${total_passenger}`}</p> */}
-        <p>{jet.speed}mph</p>
-      </span>
-
-
-    </div>
+    <>
+    <section className='jet_card'>
+        <div className='jet_card_div'>
+          <img src={jet.image} alt='' />
+        </div>
+        <span className='jet_card_div_detail'>
+          <h1 className='title'>{jet.model} </h1>
+          <p>{jet.manufacturer}</p>
+          <p>{jet.max_range}</p>
+          <p>{jet.total_passenger}</p>
+          <p>{jet.speed}mph</p>
+          <button onClick={(e)=>{bookme(e)}} className='bookme' >Book Me!</button>
+        </span>
+        
+    </section>
+    </>
   )
 }

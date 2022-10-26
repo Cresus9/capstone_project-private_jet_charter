@@ -44,16 +44,14 @@ export default function EditProfil({user, setUser}) {
             <span className='signup_form_input'>
                 <label> First Name:
                 <input 
-                    type='text'
                     name='first_name'
                     placeholder=''
                     value={updated.first_name}
-                    onChange={(e) =>console.log(e)}
+                    onChange={changeHandler}
                 />
                 </label>
                 <label> Last Name:
                 <input
-                    type='text'
                     name='first_name'
                     placeholder=''
                     value={updated.last_name}
@@ -62,7 +60,6 @@ export default function EditProfil({user, setUser}) {
                 </label>
                 <label> Email:
                 <input 
-                    
                     name='email'
                     placeholder=''
                     value={updated.email}

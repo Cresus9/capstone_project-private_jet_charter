@@ -1,7 +1,7 @@
 import React,{ useEffect} from 'react'
 import UserBookingHistoryCard from './UserBookingHistoryCard';
 
-export default function userBookingHistory() {
+export default function UserBookingHistory({ user,bookings,setBookings }) {
   
     useEffect(() =>{
         fetch(`/bookings/member/${user.id}`)
@@ -21,7 +21,7 @@ export default function userBookingHistory() {
       return (
         <div>
           {bookings.map((booking) =>
-          <UserBookingHistoryCard key={booking.id} booking={booking}/>)}
+          <UserBookingHistoryCard key={booking.id} booking={booking} user={user}/>)}
         </div>
       )
 }

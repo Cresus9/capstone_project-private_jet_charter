@@ -1,0 +1,82 @@
+
+/* *{
+    background-color: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),url());
+    background-size: cover;
+    background-position: center;
+} */
+.booking-form{
+    /* background-color: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); */
+
+    /* background-image:url('https://image.shutterstock.com/image-photo/aerial-sunset-view-over-blue-600w-1937284945.jpg'); */
+    /* display: grid;
+    margin: 20px;
+    padding: 20px;
+    width: 470px;
+    height: 450px;
+    border: 1px solid #ced4da */
+    background-color: white;
+    border: 3px solid rgb(245, 232, 232,0.7);
+    border-radius: 15px;
+   
+    box-shadow: 20px 20px 50px 10px rgb(49, 103, 222) inset;
+    height: 600px;
+    font-size: 22px;
+    width: 500px;
+    /* margin-right: 00px; */
+    margin: 20%;
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 50px;
+    display:inline-block
+    
+
+}
+.booking-form h2{
+    /* background-color: white; */
+    padding-bottom: 10px;
+    border-radius: 2px;
+    text-align-last: center;
+    /* box-shadow: 20px 20px 50px grey */
+   
+}
+
+    
+
+
+.from-control{
+    padding: 8px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.submit{
+    background-color: blue;
+    border: 10px;
+    border-radius: 10px;
+    color: white;
+    
+}
+.submit:hover{
+    background-color: white;
+    color: blue;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+/* .btn{
+    color: aqua;
+} */
+/* .booking-form{
+    padding: 0 20px 20px;
+}
+.booking-form label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    color:#fff
+}
+input::placeholder{
+    color: #fff !important;
+
+}
+.form-control{
+    width: 151px;
+    display: inline-block;
+} */

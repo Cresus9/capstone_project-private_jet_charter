@@ -1,8 +1,11 @@
 import React,{ useEffect, useState } from 'react'
 import UserBookingCard from './UserBookingCard'
-// import './Bookings.css'
+import './UserBookings.css'
+import {FaPlaneDeparture,FaPlaneArrival} from 'react-icons/fa'
+import {BsFillPeopleFill} from 'react-icons/bs'
+import {AiOutlineFieldTime} from 'react-icons/ai'
 
-export default function Bookings({user},{setBookings}, {bookings}) {
+export default function UserBookings({user,setBookings,bookings}) {
   
 
   useEffect(() =>{
@@ -18,12 +21,29 @@ export default function Bookings({user},{setBookings}, {bookings}) {
     })
 
   }, [])
+  console.log(bookings)
 
 
   return (
-    <div>
-      {bookings.map((booking) =>
-      <UserBookingCard key={booking.id} booking={booking}/>)}
-    </div>
+    <section className='booking-display'>
+        <h3>Flight Info:</h3>
+        <div>
+          <div className='location'>
+            <h6> <FaPlaneDeparture/>{bookings.from} to {bookings.to} <FaPlaneArrival/></h6>
+            <button className='btn-manage'>Manage Booking</button>
+          </div>
+          <div className='date'>
+            <span className='date-span'>Departure time</span>
+            <h6>{bookings.date}</h6>
+            <h6><AiOutlineFieldTime/> {bookings.time}</h6>
+          </div>
+          <div className='passenger'>
+            <h6><BsFillPeopleFill/>{bookings.total_passenger} </h6>
+            <span>Booked by</span>
+            <h5>{user.name}</h5>
+          </div>
+        </div>
+        
+    </section>
   )
 }

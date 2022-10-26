@@ -10,10 +10,12 @@ Booking.destroy_all
 Member.destroy_all
 
 
-Member.create(first_name:"Thierry" ,last_name:"Yabre" ,email:"thierry@gmail.com" ,password_digest:"123" ,phone_number:"233-322-3332")
+Member.create(first_name:"Thierry" ,first_name:"Yabre" ,email:"thierry@gmail.com" ,password_digest:"123" ,phone_number:"233-322-3332")
 Member.create(first_name:"Paul" ,last_name:"Numbier" ,email:"Paul@gmail.com" ,password_digest:"178" ,phone_number:"289-322-3332")
 Member.create(first_name:"Justin" ,last_name:"Johnson" ,email:"Justin@gmail.com" ,password_digest:"120" ,phone_number:"233-002-3332")
 Member.create(first_name:"Ashley" ,last_name:"Dupont" ,email:"ashley@gmail.com" ,password_digest:"023" ,phone_number:"293-322-3332")
+Member.create(first_name:"Juste" ,last_name:"Dupont" ,email:"juste@gmail.com" ,password_digest:"098" ,phone_number:"293-302-3332")
+Member.create(first_name:"Raina" ,last_name:"Derco" ,email:"raina@gmail.com" ,password_digest:"003" ,phone_number:"293-322-0032")
 
 Jet.create(model:"Bombardier Global 5000" ,manufacturer:"Bombardier" ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/bombardier-global-express-5000-1.jpg" ,max_range:"5500" ,total_passenger:"17", speed:"530")
 Jet.create(model:"Gulfstream V" ,manufacturer:"Gulfstream " ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/gulfstream-v-7.jpg" ,max_range:"7300" ,total_passenger:"16" ,speed:"528")

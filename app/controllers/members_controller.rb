@@ -7,6 +7,13 @@ class MembersController < ApplicationController
     render json: @members
   end
 
+  
+
+  def show
+    member= Member.find(params[:member_id])
+    render json: member
+  end
+
 
   def login
     member = Member.find_by(email: params[:email])
@@ -28,7 +35,7 @@ class MembersController < ApplicationController
     token = request.headers["token"]
     member_id = decode_token(token)
     if member_id
-      render json: Member.find(member_id)
+      render json:Member.find(member_id)
     else
       render json: {error: "401 incorrect token"}, status: 401
     end
