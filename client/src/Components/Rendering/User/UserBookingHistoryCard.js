@@ -6,6 +6,7 @@ import './UserBookingHistoryCard.css'
 
 
 export default function UserBookingHistoryCard({user,booking}) {
+    console.log(booking)
     return (
         <section className='booking-display'>
         <h3>Flight Info:</h3>
@@ -22,7 +23,7 @@ export default function UserBookingHistoryCard({user,booking}) {
           <div className='passenger'>
             <h6><BsFillPeopleFill/>{booking.total_passenger} </h6>
             <span>Booked by</span>
-            <h5>{user.name} Justin</h5>
+            <h5>{user.name} Thierry</h5>
           </div>
         </div>
         

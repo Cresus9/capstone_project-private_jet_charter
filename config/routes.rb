@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :passengers
   resources :bookings
   resources :members
   resources :jets
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'bookings/member/:member_id', to: "bookings#by_member"
   get 'booking/member/:member_id', to: "bookings#upcoming"
-  
+  get 'passengers/member/:member_id', to: "passengers#by_member"
 
 	
   # Routing logic: fallback requests for React Router.

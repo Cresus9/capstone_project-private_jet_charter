@@ -15,7 +15,7 @@ export default function JetCard({jet, bookme}) {
           <p>{jet.max_range}</p>
           <p>{jet.total_passenger}</p>
           <p>{jet.speed}mph</p>
-          <button onClick={(e)=>{bookme(e)}} className='bookme' >Book Me!</button>
+          <button onClick={(e)=>("Please Sigin to proceed")} className='bookme' >Book Me!</button>
         </span>
         
     </section>

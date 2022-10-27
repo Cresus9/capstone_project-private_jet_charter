@@ -28,6 +28,7 @@ export default function Home({onLogout, onLogin}) {
 				<p>Book your private jet to anywhere in the US!</p>
 			</div>
 		</div>
+		
 		<section className='about'>
       <h3>For your next VIP experience</h3>
       <div className='about_items'>
@@ -47,6 +48,10 @@ export default function Home({onLogout, onLogin}) {
           <p>private jet charter offers a unique and luxurious way to travel. When you book a private jet, you can choose your own itinerary and schedule, which means you can make the most of your time. Whether you're traveling for business or pleasure, a private jet charter is an excellent way to get where you need to go in style. And for those in the entertainment industry, a private jet charter is often the only way to travel. With a private jet, you can avoid the hassles of commercial travel, such as long security lines and delays. So if you're looking for a convenient and luxurious way to travel, consider a private jet charter.</p>
         </div>
       </div>
+	  <div className="banner">
+			<h2>BOOK YOU Flight</h2>
+			<p>Log In to proceed</p>
+		</div>
     </section>
 		
 		{/* <JetListings /> */}

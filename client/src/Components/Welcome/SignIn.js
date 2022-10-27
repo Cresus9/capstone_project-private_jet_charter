@@ -8,6 +8,7 @@ export default function SignIn({logInData,signInUpdate, submitlogInUpdate}) {
   
   return (
 	<div className='signup_div'>
+    <h1>Sign In</h1>
       <form onSubmit={submitlogInUpdate}  className='signup_form'>
             <input className='sign'
               name='email'

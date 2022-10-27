@@ -41,9 +41,11 @@ export default function EditProfil({user, setUser}) {
   return (
     <div>
         <form onSubmit={formHandler}  className='sigup_form'>
-            <span className='signup_form_input'>
+            <h1 className='moi'>Update Profile Info</h1>
+            <span className='signup_div'>
                 <label> First Name:
-                <input 
+                <input
+                    className='sign'
                     name='first_name'
                     placeholder=''
                     value={updated.first_name}
@@ -52,7 +54,8 @@ export default function EditProfil({user, setUser}) {
                 </label>
                 <label> Last Name:
                 <input
-                    name='first_name'
+                    className='sign'
+                    name='last_name'
                     placeholder=''
                     value={updated.last_name}
                     onChange={changeHandler}
@@ -60,6 +63,7 @@ export default function EditProfil({user, setUser}) {
                 </label>
                 <label> Email:
                 <input 
+                    className='sign'
                     name='email'
                     placeholder=''
                     value={updated.email}
@@ -68,6 +72,7 @@ export default function EditProfil({user, setUser}) {
                 </label>
                 <label> Password:
                 <input
+                    className='sign'
                     name='password'
                     placeholder=''
                     value={updated.password}
@@ -79,7 +84,7 @@ export default function EditProfil({user, setUser}) {
                     placeholder=''
                     // value={}
                 /> */}
-                <button type="submit">Submit</button>
+                <button  className='signbtn' type="submit">Submit</button>
             </span>
         </form>
     </div>
