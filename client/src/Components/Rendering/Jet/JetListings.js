@@ -2,7 +2,7 @@ import React,{ useEffect,useState } from 'react'
 import JetCard from './JetCard'
 import './JetListings.css'
 
-export default function JetListings({jets}) {
+export default function JetListings({jets, bookme}) {
   const [listings, setListings]= useState([])
 
 useEffect(()=>{
@@ -21,7 +21,7 @@ useEffect(()=>{
 }, []);
 
 const getList = listings.map((listing)=>
-<JetCard key={listing.id} jet={listing}/>)
+<JetCard key={listing.id} jet={listing} bookme={bookme}/>)
 // console.log(listings)
 
 
@@ -31,7 +31,7 @@ const getList = listings.map((listing)=>
     <>
     <div className='all'>
       <div className='jet-top'>
-      <h3>Choose your jet!</h3>
+      {/* <h3>Choose your jet!</h3> */}
 
       </div>
       <div className='jet_div'>

@@ -33,9 +33,10 @@ class MembersController < ApplicationController
 
   def profile
     token = request.headers["token"]
+   
     member_id = decode_token(token)
     if member_id
-      render json:Member.find(member_id)
+      render json: Member.find_by(member_id:params[:member_id])
     else
       render json: {error: "401 incorrect token"}, status: 401
     end
@@ -47,12 +48,10 @@ class MembersController < ApplicationController
 
 
 
-  # PATCH/PUT /members/1
-  # def update
-  # member = @member.update!(member_params)
-  #   render json: @member status: :ok
-  # end
-  # end
+  def update
+  @member = Member.update(member_params)
+    render json: @member
+  end
 
 
   private

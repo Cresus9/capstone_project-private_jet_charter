@@ -8,6 +8,7 @@ import './SignIn.css'
 export default function SignUp({onLogin}) {
 
   const navigate = useNavigate();
+  
   const [user, setUser]=useState({email:""})
   const [first_name,setFirst_name]=useState("")
   const [last_name,setLast_name]=useState("")
@@ -42,7 +43,7 @@ export default function SignUp({onLogin}) {
           setUser(data.user)
           localStorage.setItem('token', data.token)
         });
-        // navigate('/profil')
+        navigate('/')
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -52,7 +53,7 @@ export default function SignUp({onLogin}) {
 
   return (
     <section className='signup_div'>
-      <h1>Sign In</h1>
+      <h1>Sign Up</h1>
         <form onSubmit={handleSubmit} className='signup_form'>
             <label>First Name</label>
             <input

@@ -15,6 +15,9 @@ import SignUp from './Components/Welcome/SignUp';
 import UserBookingHistory from './Components/Rendering/User/UserBookingHistory';
 import UserBookings from './Components/Rendering/User/UserBookings'
 import EditProfil from './Components/Rendering/User/EditProfil';
+import Dashboard from './Components/Rendering/User/Dashboard';
+import Passenger from './Components/Rendering/User/Passenger';
+import CreatePassenger from './Components/Rendering/User/CreatePassenger';
 
 
 function App() {
@@ -38,6 +41,7 @@ const [logInData, setLogInData]= useState(logInBody)
   const [page, setPage]= useState("/")
   const [signUpData, setSignUpData]= useState({...signUpBody})
   const [bookings, setBookings]=useState([])
+  const [passengers, setPassengers]=useState([])
 
 
 
@@ -45,7 +49,7 @@ const [logInData, setLogInData]= useState(logInBody)
     let token=localStorage.getItem('jwt')
     if (token && !user.email){
       fetch ("/profile",{
-        header: {
+        headers: {
           token: token,
           "Content-Type": "application/json",
         },
@@ -142,15 +146,33 @@ return (
       {/* < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout} user={user} setUser={setUser}/> */}
       {/* <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser} listings={content}/> */}
       
+      {/* <UserBookings /> */}
+      {/* <EditProfil user={user} setUser={setUser}/> */}
+     
       
       <Routes>
+        <Route path='/guest' element={<>
+          <Dashboard handleLogout={handleLogout}/>
+          <Passenger passengers={passengers} setPassengers={setPassengers} user={user}/>
+          <CreatePassenger user={user}/>
+        </>}/>
+        <Route  path='/profil/update' element={ <EditProfil user={user} setUser={setUser}/>}/>
           <Route path='/jets' element={<JetListings jets={setContent}/>}/>
-          <Route path='profil/profile/update' element={ <EditProfil user={user} setUser={setUser}/>}/>
-          <Route path='/bookings/upcoming' element={ <UserBookings user={user} bookings={bookings} setBookings={setBookings} />}/>
-          <Route path='/bookings/history' element={<UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/>}/>
+          <Route path='/profile/update' element={ <>
+            <Dashboard handleLogout={handleLogout}/>
+            <EditProfil user={user} setUser={setUser}/>
+          </>}/>
+          <Route path='/bookings/upcoming' element={<>
+            <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/></>}/>
+          
+          <Route path='/bookings/history' element={<>
+            <Dashboard handleLogout={handleLogout}/>
+          <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/></>}/>
           <Route path="/about" element={<About />} />
           {/* <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content} /> */}
-          <Route path="/profil" element={<Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />}/>
+          <Route path="/profil" element={<>
+          <Dashboard handleLogout={handleLogout}/>
+          <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  /></>}/>
           <Route path="/about" element={ <About />}/>
           <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
           <Route path="/sign up" element={ <SignUp />}/>

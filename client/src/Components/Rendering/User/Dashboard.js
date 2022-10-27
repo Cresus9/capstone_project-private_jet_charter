@@ -17,15 +17,17 @@ export default function Dashboard({handleLogout}) {
         <Navbar>
         <Nav>
           <Nav.Item icon={<HomeIcon />} onClick={()=>navigate('/profil')}>Dashboard</Nav.Item>
-          <Nav.Item>New Booking</Nav.Item>
+          <Nav.Item >New Booking</Nav.Item>
     
           <Nav.Menu title="Profile">
           <Nav.Menu title="Bookings">
-              <Nav.Item onClick={()=>navigate('/bookings/upcoming')}>Upcoming</Nav.Item>
-              <Nav.Item  >Past</Nav.Item>
+             
+              
             </Nav.Menu>
-            <Nav.Item onClick={()=>navigate('/bookings/history')}>Guests</Nav.Item>
-            <Nav.Item  onClick={()=>navigate('./profil/profile/update')}>Update Profile</Nav.Item>
+            <Nav.Item onClick={() =>navigate('/guest')}>Guests</Nav.Item>
+            <Nav.Item  onClick={()=>navigate('/bookings/history')} >Past</Nav.Item>
+            <Nav.Item onClick={()=>navigate('/bookings/history')}>Upcoming</Nav.Item>
+            <Nav.Item  onClick={()=>navigate('/profile/update')}>Update Profile</Nav.Item>
           </Nav.Menu>
         </Nav>
         

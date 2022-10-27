@@ -12,6 +12,8 @@ import {FaFighterJet} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import UserBookingHistory from './UserBookingHistory'
+import CreatePassenger from './CreatePassenger'
+import CarouselCard from '../../Welcome/CarouselCard'
 
 import SignUp from '../../Welcome/SignUp'
 
@@ -72,7 +74,7 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
 // console.log(user.first_name)
   return (
     <>
-    <Dashboard handleLogout={handleLogout}/>
+    {/* <Dashboard handleLogout={handleLogout}/> */}
   <section  >
     <div className='profil'>
       <h1>MAKE YOUR RESERVATION</h1>
@@ -80,20 +82,11 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
     </div>
     <div>
       <div>
-        {/* <header className='header'>
-            <ul className='nabar-nav'>
-              <li> <a>My Profile</a> </li>
-              <li> <a >My Bookings</a> </li>
-              <li> <a >Travelers</a> </li>
-            </ul>
-            
-          </header> */}
-      </div>
-      <div>
       {/* <button className='signout' onClick={handleLogout}>Sign Out</button> */}
         <h3>Welcome,{user.first_name}!</h3>
         {/* <button onClick={()=>navigate('/jets')}>Edit Profile</button> */}
       </div>
+      
     </div>
     <div>
       {listings.map((listing)=>{
@@ -106,10 +99,7 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
         jets={listings}
                 />
         })}
-        {/* <Booking 
-        user={user} 
-        bookings={bookings} 
-        setBookings={setBookings}  /> */}
+        {/* <CreatePassenger user={user}/> */}
     </div>
   </section>
   {/* <JetListings jets={setContent}/> */}
