@@ -155,32 +155,45 @@ return (
           <Dashboard handleLogout={handleLogout}/>
           <Passenger passengers={passengers} setPassengers={setPassengers} user={user}/>
           <CreatePassenger user={user}/>
+          <Footer />
         </>}/>
         <Route  path='/profil/update' element={ <EditProfil user={user} setUser={setUser}/>}/>
           <Route path='/jets' element={<JetListings jets={setContent}/>}/>
           <Route path='/profile/update' element={ <>
             <Dashboard handleLogout={handleLogout}/>
             <EditProfil user={user} setUser={setUser}/>
+            <Footer />
           </>}/>
           <Route path='/bookings/upcoming' element={<>
-            <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/></>}/>
+            <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/>
+            <Footer /></>}/>
           
           <Route path='/bookings/history' element={<>
             <Dashboard handleLogout={handleLogout}/>
-          <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/></>}/>
-          <Route path="/about" element={<About />} />
+          <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/>
+          <Footer /></>}/>
+          <Route path="/about" element={<>
+            <About />
+            <Footer /></>} />
           {/* <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content} /> */}
           <Route path="/profil" element={<>
           <Dashboard handleLogout={handleLogout}/>
-          <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  /></>}/>
+          <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />
+          <JetListings jets={setContent} bookme={bookme}/>
+          <Footer />
+          </>}/>
           <Route path="/about" element={ <About />}/>
           <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
           <Route path="/sign up" element={ <SignUp />}/>
-          <Route path="/" element={ <Home />}/>
+          <Route path="/" element={<>
+            <Home />
+            <JetListings jets={setContent} bookme={bookme}/>
+            <Footer />
+          </>}/>
       </Routes>
-      <JetListings jets={setContent} bookme={bookme}/>
+      {/* <JetListings jets={setContent} bookme={bookme}/> */}
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

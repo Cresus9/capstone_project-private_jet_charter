@@ -19,17 +19,31 @@
     border-radius: 15px;
    
     box-shadow: 20px 20px 50px 10px rgb(49, 103, 222) inset;
-    height: 600px;
+    height: 650px;
     font-size: 22px;
     width: 500px;
     /* margin-right: 00px; */
     margin: 20%;
     padding-top: 30px;
+
     text-align: center;
     padding-bottom: 50px;
-    display:inline-block
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     
 
+}
+.booking-form label{
+    margin: 5px 10px 5px 0;
+
+}
+.booking-form input{
+    vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
 .booking-form h2{
     /* background-color: white; */
@@ -44,7 +58,16 @@
 
 
 .from-control{
-    padding: 8px;
+    grid-row-start: auto;
+
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.from-date{
+    display: inline;
+    padding: 10px;
     margin: 10px;
     border-radius: 15px;
 }
@@ -80,3 +103,14 @@ input::placeholder{
     width: 151px;
     display: inline-block;
 } */
+
+/* @media (max-width: 800px) {
+    .booking-form input {
+      margin: 10px 0;
+    }
+    
+    .booking-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  } */

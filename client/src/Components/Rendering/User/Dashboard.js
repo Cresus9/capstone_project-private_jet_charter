@@ -17,13 +17,9 @@ export default function Dashboard({handleLogout}) {
         <Navbar>
         <Nav>
           <Nav.Item icon={<HomeIcon />} onClick={()=>navigate('/profil')}>Dashboard</Nav.Item>
-          <Nav.Item >New Booking</Nav.Item>
+          <Nav.Item onClick={() =>navigate('/profil')}>New Booking</Nav.Item>
     
           <Nav.Menu title="Profile">
-          <Nav.Menu title="Bookings">
-             
-              
-            </Nav.Menu>
             <Nav.Item onClick={() =>navigate('/guest')}>Guests</Nav.Item>
             <Nav.Item  onClick={()=>navigate('/bookings/history')} >Past</Nav.Item>
             <Nav.Item onClick={()=>navigate('/bookings/history')}>Upcoming</Nav.Item>

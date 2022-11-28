@@ -6,8 +6,6 @@ import CreateBooking from './CreateBooking'
 import Booking from './Booking'
 import Dashboard from './Dashboard'
 import JetListings from '../Jet/JetListings'
-import NavItem from '../../Welcome/NavItem'
-import DropdowMenu from '../../Welcome/DropdowMenu'
 import {FaFighterJet} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -18,7 +16,6 @@ import CarouselCard from '../../Welcome/CarouselCard'
 import SignUp from '../../Welcome/SignUp'
 
 export default function Profil({user, setUser, handleLogout, listings, bookme}) {
-  // console.log(listings)
   
   const [display, setDisplay]= useState({page:''})
   const [bookings, setBookings]=useState([])
@@ -34,47 +31,11 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
 
 
 
-
-// const showPage =()=>{
-//   switch (display.page) {
-//     case "booking":
-//       return (
-//       <UserBookings 
-//       user={user} 
-//       bookings={bookings} 
-//       setBookings={setBookings}  
-//       />
-//       );
-//       case "bookingHistory":
-//       return (
-//       <UserBookingHistory 
-//       user={user} 
-//       bookings={bookings} 
-//       setBookings={setBookings}  
-//       />
-
-
-//       );
-//     case 'editProfile':
-//       return(
-//         <EditProfil 
-//         user={user} 
-//         setUser={setUser}
-//         />
-
-//       )
-//       default:
-//         return null
-//   }
-// }
-
-
   
 
-// console.log(user.first_name)
+
   return (
     <>
-    {/* <Dashboard handleLogout={handleLogout}/> */}
   <section  >
     <div className='profil'>
       <h1>MAKE YOUR RESERVATION</h1>
@@ -82,9 +43,7 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
     </div>
     <div>
       <div>
-      {/* <button className='signout' onClick={handleLogout}>Sign Out</button> */}
         <h3>Welcome,{user.first_name}!</h3>
-        {/* <button onClick={()=>navigate('/jets')}>Edit Profile</button> */}
       </div>
       
     </div>
@@ -99,19 +58,11 @@ export default function Profil({user, setUser, handleLogout, listings, bookme}) 
         jets={listings}
                 />
         })}
-        {/* <CreatePassenger user={user}/> */}
     </div>
   </section>
-  {/* <JetListings jets={setContent}/> */}
   </>
   )
 }
-
-// <NavItem icon="✈️" />
-//       <NavItem icon="✈️"/>
-//       <NavItem icon="✈️"/>
-//       <NavItem icon="✈️">
-//       </NavItem>
 
 
       

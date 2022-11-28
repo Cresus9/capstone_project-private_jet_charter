@@ -16,6 +16,7 @@ export default function UserBookingHistory({ user,bookings,setBookings }) {
         })
     
       }, [])
+      console.log(bookings)
     
     
       return (

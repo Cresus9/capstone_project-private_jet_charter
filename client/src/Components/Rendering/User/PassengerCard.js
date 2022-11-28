@@ -1,11 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function PassengerCard({passenger, user}) {
 
+  const navigate = useNavigate()
 
   return (
+    <>
+    <h3>Guest list</h3>
     <section className='booking-display'>
-        <h3>Guest list</h3>
         <div>
           <div className='location'>
             <h6>{passenger.first_name}</h6>
@@ -20,11 +23,10 @@ export default function PassengerCard({passenger, user}) {
             <h6>{passenger.email} </h6>
             <h6>{passenger.nationality} </h6>
             <span>Booked by</span>
-            <h5>{user.name} Justin</h5>
+            <h5>{user.first_name}</h5>
           </div>
         </div>
-        
     </section>
-    
+    </>
   )
 }

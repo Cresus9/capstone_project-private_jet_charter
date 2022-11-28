@@ -1,4 +1,5 @@
 import React,{ useState } from 'react'
+import './EditProfil.css'
 
 export default function EditProfil({user, setUser}) {
     const UpdateBody= {
@@ -39,10 +40,15 @@ export default function EditProfil({user, setUser}) {
     }
 
   return (
+    <>
     <div>
-        <form onSubmit={formHandler}  className='sigup_form'>
+        <h3>Your are signed in as <span className='user'> {user.last_name} {user.first_name}</span></h3>
+      </div>
+    <section className='edit_div'>
+        
+        <form onSubmit={formHandler}  className='edit_form'>
             <h1 className='moi'>Update Profile Info</h1>
-            <span className='signup_div'>
+            <span >
                 <label> First Name:
                 <input
                     className='sign'
@@ -87,6 +93,7 @@ export default function EditProfil({user, setUser}) {
                 <button  className='signbtn' type="submit">Submit</button>
             </span>
         </form>
-    </div>
+    </section>
+    </>
   )
 }

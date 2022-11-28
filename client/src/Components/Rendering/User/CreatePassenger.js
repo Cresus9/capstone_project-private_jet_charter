@@ -11,7 +11,7 @@ export default function CreatePassenger({user}) {
     const [email, setEmail]=useState("")
     const [Phone, setPhone]=useState('')
 
-const navigate=useNavigate();
+const navigate= useNavigate();
 
 // console.log(user)
 
@@ -48,7 +48,7 @@ const navigate=useNavigate();
               res.json().then((errors) => console.log(errors));
             }
           })
-        //   navigate('./guest')
+          navigate('/guest')
       }
       else {
         alert("Please,login to proceed")
@@ -58,6 +58,7 @@ const navigate=useNavigate();
     // console.log(passengers)
       return (
         <>
+        <h1>Add passenger</h1>
         <section className='booking-form'>
           <h2>Guests</h2>
           <form onSubmit={formHandler} className='signup_form'>
@@ -83,7 +84,7 @@ const navigate=useNavigate();
             <label>birthdate</label>
             <input
               className='sign'
-              placeholder="birthdate"
+              placeholder="Birthdate"
               name="birthdate"
               value={birthdate}
               onChange={(e)=>setBirthdate(e.target.value)}
@@ -93,7 +94,7 @@ const navigate=useNavigate();
             <input
               className='sign'
               name="email"
-              placeholder="email"
+              placeholder="Email"
               value={email}
               onChange={(e)=>setEmail(e.target.value)}
             />
@@ -108,7 +109,7 @@ const navigate=useNavigate();
             <label >Nationality</label>
             <input
               className='sign'
-              placeholder="nationality"
+              placeholder="Nationality"
               name="nationality"
               value={nationality}
               onChange={(e)=>setNationality(e.target.value)}

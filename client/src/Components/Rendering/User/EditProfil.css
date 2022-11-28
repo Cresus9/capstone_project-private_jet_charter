@@ -1,20 +1,23 @@
 
-.signup_div{
-	background-color: white;
+.edit_div{
+	background-color: rgb(239, 239, 247);
     border: 3px solid rgb(245, 232, 232,0.7);
     border-radius: 15px;
     box-shadow: 20px 20px 50px 20px rgb(225, 229, 238) inset;
-    height: 600px;
+    height: 500px;
     font-size: 22px;
-    width: 500px;
-    margin: 20%;
-    padding-top: 30px;
+    width: 600px;
+    margin: 10%;
+    padding-top: -10px;
     text-align: center;
     padding-bottom: 50px;
     display:inline-block
 }
+.user{
+    color: rgb(95, 95, 221);
+}
 
-.signup_form{
+/* .edit_form{
 	display: flex;
 	flex-direction: column;
 	font-size: 15px;
@@ -23,12 +26,12 @@
     padding: 6px;
     margin: 1px;
     border-radius: 15px;
-}
-.moi{
+} */
+/* .moi{
     padding-left: 20px;
     margin: 20%;
    text-align: center;
-}
+} */
 .sign{
 	border: 3px solid bisque;
 	border-radius: 15px;

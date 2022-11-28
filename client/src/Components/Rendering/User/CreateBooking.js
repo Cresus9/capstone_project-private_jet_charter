@@ -4,57 +4,31 @@ import './CreateBooking.css'
 import DatePicker from 'react-datepicker'
 import TimePicker from 'react-time-picker';
 import "react-datepicker/dist/react-datepicker.css";
-
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateBooking({user, bookings, setBookings,jets}) {
 
-
-  console.log(user)
-  // const getJet=(jet)=>{
-  //   // return jet.model
-  // }
-
-  // const addjet= jets.map((jet)=>{
-  //    return jet
-  // })
-  // console.log(addjet)
-  // console.log(jets)
-  // const form ={
-  //   total_passenger:"",
-  //   time:"",
-  //   from:"",
-  //   date:'',
-  //   to:"",
-  //   jet_id:"",
-  //   member_id:user.id
-  // }
+const navigate = useNavigate()
+  // console.log(user)
+  
 
   const [total_passenger,setTotal_passenger]=useState('')
-  const [time, setTime] = useState('10:00');
+  const [time, setTime] = useState('00:00');
   const [to,setTo]=useState('')
   const [from,setFrom]=useState('')
   const [jet_id,setJet_id]=useState('')
   const [member_id,setmember_id]=useState('')
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState();
   // const handleChange = date => setDate(date);
   // const [startdate,setSartdate]=useState(new Date())
   const [bookedJet, setBookedJet]=useState([])
   const [bookedUser, setBookedUser]=useState([])
   // const [bookingForm, setBookingForm ]= useState(form)
   
-  console.log(date)
+  // console.log(date)
 
 
-  // const changeHandler=(e)=>{
-  //   console.log(e)
-  //   const update={
-  //     ...bookingForm,
-  //     [e.target.name]: e.target.value,
-  //     date:new Date()
-      
-  //   }
-  //   setBookingForm(update)
-  // }
+  
 
   const formHandler=(e)=>{
     e.preventDefault()
@@ -88,6 +62,7 @@ export default function CreateBooking({user, bookings, setBookings,jets}) {
           res.json().then((errors) => console.log(errors));
         }
       })
+      navigate('/bookings/history')
   }
   else {
     alert("Please, select your jet!")
@@ -95,13 +70,6 @@ export default function CreateBooking({user, bookings, setBookings,jets}) {
 }
 
 
-// const App = () => (
-//   <>
-//     <DatePicker block />
-//   </>
-// );
-// ReactDOM.render(<App />, document.getElementById('root'));
-  
 
 
   return (
@@ -112,37 +80,42 @@ export default function CreateBooking({user, bookings, setBookings,jets}) {
           <span className='booking_form_input'>
             <label>From : </label>
                 <select className='from-control' name="from" onChange={(e)=>setFrom(e.target.value)} >
-                    <option >Select location</option>
-                    <option>San Jacinto, USA</option>
-                    <option>North Dakota, Canada</option>
-                    <option>West Virginia, Paris</option>
+                <option value="">Select location</option>
+                <option>New York,NY USA</option>
+                    <option>Miami,FL USA</option>
+                    <option>Los Angeles,CA USA</option>
+                    <option>Columbus,OH USA</option>
+                    <option>Houston,TX USA</option>
+                    <option>Dallas,TX USA</option>
+                    <option>Chicago,IL USA</option>
+                    <option>Las Vegas,NV USA</option>
                 </select>
                   <br/>
               <label className='from-control' >To: </label>
 
                   <select className='from-control' name="to" onChange={(e)=>setTo(e.target.value)}>
                     <option value="">Select location</option>
-                    <option>San Jacinto, USA</option>
-                    <option>North Dakota, Canada</option>
-                    <option>West Virginia, Paris</option>
+                    <option>New York,NY USA</option>
+                    <option>Miami,FL USA</option>
+                    <option>Los Angeles,CA USA</option>
+                    <option>Columbus,OH USA</option>
+                    <option>Houston,TX USA</option>
+                    <option>Dallas,TX USA</option>
+                    <option>Chicago,IL USA</option>
+                    <option>Las Vegas,NV USA</option>
                   </select>
-                
                 <br/>
-                <label > Date:
-                
+                <label >Date:</label>
                 <DatePicker selected={date} 
-                className={'from-control'}
-
-                onChange={(date)=>setDate(date)} />;
-                </label>
+                className={'from-date'}
+                onChange={(date)=>setDate(date)} />
                 <br/>
-                <label > Time:
+                <label >Time:</label>
                 <TimePicker
-                 className={'from-control'}
-                
                 value={time}
+                className={'from-control'}
                 onChange={(time)=>setTime(time)}  />
-                </label>
+                
                 <br/>
 
               <label > Passenger:
@@ -152,6 +125,9 @@ export default function CreateBooking({user, bookings, setBookings,jets}) {
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
                   </select>
    
                 </label>
