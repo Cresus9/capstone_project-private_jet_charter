@@ -42,6 +42,7 @@ const [logInData, setLogInData]= useState(logInBody)
   const [signUpData, setSignUpData]= useState({...signUpBody})
   const [bookings, setBookings]=useState([])
   const [passengers, setPassengers]=useState([])
+  const [posts, setPosts]=useState([])
 
 
 
@@ -56,7 +57,6 @@ const [logInData, setLogInData]= useState(logInBody)
       })
       .then (resp =>resp.json())
       .then (data => {
-        // console.log(data)
         if(data.user){
           setUser(data.user)
           console.log(data.user)}
@@ -64,9 +64,17 @@ const [logInData, setLogInData]= useState(logInBody)
     }
   }, []);
 
+  
+
+    useEffect(()=> {
+        fetch ('https://jsonplaceholder.typicode.com/posts')
+        .then(resp => resp.json())
+        .then(posts => setPosts(posts))
+    },[])
+console.log(posts)
+
 
 useEffect(()=>{
-  // console.log(navigate)
 },[navigate])
 
 
@@ -77,6 +85,7 @@ useEffect(()=>{
       [e.target.name] : e.target.value
     })
   }
+
 
 
   const submitlogInUpdate =(e) =>{
@@ -92,9 +101,7 @@ useEffect(()=>{
     })
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data.user);
       if(data["user"]){
-        // console.log(data.user);
         localStorage.setItem("jwt", data.token);
         setUser(
           data.user
@@ -105,31 +112,12 @@ useEffect(()=>{
       }
     });
   }
-  // console.log(setUser)
-
-
-
-  //user signIn 
-  //SignOut user
-  
-  // const logOut = () =>{
-  //   setUser({email:''})
-  //   localStorage.removeItem('token')
-  // }
 
 	function handleLogout() {
 		localStorage.clear();
 		setUser(null);
     navigate("/")
 	}
-
-  // const list=(content)=>{
-  //   console.log(content)
-  // }
-  // list(content)
-  // console.log(content)
-  
-// console.log(content)
 
 const bookme=(e)=>{
   if (user===user){
@@ -143,13 +131,6 @@ const bookme=(e)=>{
   
 return (
     <div className="App">
-      {/* < NavBar signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} handleLogout={handleLogout} user={user} setUser={setUser}/> */}
-      {/* <Login signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate} logInData={logInData} user={user} setUser={setUser} listings={content}/> */}
-      
-      {/* <UserBookings /> */}
-      {/* <EditProfil user={user} setUser={setUser}/> */}
-     
-      
       <Routes>
         <Route path='/guest' element={<>
           <Dashboard handleLogout={handleLogout}/>
@@ -175,7 +156,6 @@ return (
           <Route path="/about" element={<>
             <About />
             <Footer /></>} />
-          {/* <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content} /> */}
           <Route path="/profil" element={<>
           <Dashboard handleLogout={handleLogout}/>
           <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />
@@ -191,9 +171,6 @@ return (
             <Footer />
           </>}/>
       </Routes>
-      {/* <JetListings jets={setContent} bookme={bookme}/> */}
-      
-      {/* <Footer /> */}
     </div>
   );
 }
