@@ -74,6 +74,15 @@ const [logInData, setLogInData]= useState(logInBody)
 console.log(posts)
 
 
+const clickHandler = ()=>{
+  if (userid === postid){
+    fetch ('https://jsonplaceholder.typicode.com/posts')
+        .then(resp => resp.json())
+        .then(comments => setComments(comments))
+  }
+}
+
+
 useEffect(()=>{
 },[navigate])
 
@@ -154,6 +163,7 @@ return (
           <UserBookingHistory user={user} bookings={bookings} setBookings={setBookings}/>
           <Footer /></>}/>
           <Route path="/about" element={<>
+            <NavBar />
             <About />
             <Footer /></>} />
           <Route path="/profil" element={<>
@@ -166,6 +176,7 @@ return (
           <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
           <Route path="/sign up" element={ <SignUp />}/>
           <Route path="/" element={<>
+            <NavBar />
             <Home />
             <JetListings jets={setContent} bookme={bookme}/>
             <Footer />

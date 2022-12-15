@@ -6,7 +6,7 @@ import image3 from '../assets/image/pics/pexels-asad-photo-maldives-1430676.jpg'
 import image4 from '../assets/image/pics/Screen Shot 2022-10-24 at 9.54.26 PM.png'
 import image5 from '../assets/image/pics/Screen Shot 2022-10-24 at 9.55.32 PM.png'
 import image6 from '../assets/image/pics/Screen Shot 2022-10-24 at 9.56.49 PM.png'
-import NavBar from './NavBar'
+// import NavBar from './NavBar'
 import './Home.css'
 import JetListings from '../Rendering/Jet/JetListings'
 // import video from '../assets/video/1046392675-hd.mov'
@@ -16,7 +16,7 @@ import video from '../assets/video/1046392675-sd.mov'
 export default function Home({onLogout, onLogin}) {
 	return(
 		<>
-		<NavBar />
+		{/* <NavBar /> */}
 		<section className='lol'>
 		<p>Traveling internationally? Get update information on COVID-19 travel guidance and restrictions<a > Learn more!</a></p>
 		</section>
