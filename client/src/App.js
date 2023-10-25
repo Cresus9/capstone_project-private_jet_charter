@@ -18,6 +18,7 @@ import EditProfil from './Components/Rendering/User/EditProfil';
 import Dashboard from './Components/Rendering/User/Dashboard';
 import Passenger from './Components/Rendering/User/Passenger';
 import CreatePassenger from './Components/Rendering/User/CreatePassenger';
+import JetCard from './Components/Rendering/Jet/JetCard';
 
 
 function App() {
@@ -66,21 +67,7 @@ const [logInData, setLogInData]= useState(logInBody)
 
   
 
-    useEffect(()=> {
-        fetch ('https://jsonplaceholder.typicode.com/posts')
-        .then(resp => resp.json())
-        .then(posts => setPosts(posts))
-    },[])
-console.log(posts)
 
-
-const clickHandler = ()=>{
-  if (userid === postid){
-    fetch ('https://jsonplaceholder.typicode.com/posts')
-        .then(resp => resp.json())
-        .then(comments => setComments(comments))
-  }
-}
 
 
 useEffect(()=>{
@@ -112,9 +99,7 @@ useEffect(()=>{
     .then((data) => {
       if(data["user"]){
         localStorage.setItem("jwt", data.token);
-        setUser(
-          data.user
-        );
+        setUser(prevUser => ({...prevUser, ...data.user}));
         navigate('/profil')
       }else{
         alert(data["error"])
@@ -132,7 +117,8 @@ const bookme=(e)=>{
   if (user===user){
     setUser(user)
     navigate('./profil')
-  } else{ "Please sign in to proceed"}
+  } 
+
 }
 
 
@@ -140,6 +126,8 @@ const bookme=(e)=>{
   
 return (
     <div className="App">
+
+
       <Routes>
         <Route path='/guest' element={<>
           <Dashboard handleLogout={handleLogout}/>
@@ -169,19 +157,20 @@ return (
           <Route path="/profil" element={<>
           <Dashboard handleLogout={handleLogout}/>
           <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />
-          <JetListings jets={setContent} bookme={bookme}/>
+          {/* <JetListings jets={setContent} bookme={bookme}/> */}
           <Footer />
           </>}/>
           <Route path="/about" element={ <About />}/>
           <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
           <Route path="/sign up" element={ <SignUp />}/>
+          <Route path="/jets" element={ <JetListings /> }/>
           <Route path="/" element={<>
             <NavBar />
             <Home />
             <JetListings jets={setContent} bookme={bookme}/>
             <Footer />
           </>}/>
-      </Routes>
+      </Routes> 
     </div>
   );
 }

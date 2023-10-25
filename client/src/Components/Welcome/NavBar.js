@@ -12,18 +12,24 @@ import Navbar from 'react-bootstrap/Navbar';
 export default function NavBar({onLogOut, user, signUpData, signUpUpdate, submitlogInUpdate, submitHandler,logInData,signInUpdate, handleLogout, setUser}) {
   return (
     <>
-    <header className='header'>
-      <div>
-        <Link className='links' to="/">Home</Link>
-        <Link className='links' to="/about">About</Link>
-      </div>
-      <nav className='navbar'>
-        <ul>
-        <Link className='links' to="/sign in">Sign In</Link>
-        <Link className='links' to="/sign up">Sign Up</Link>
-        </ul>
-      </nav>
-    </header>
+      <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Jetsetter Co.</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/sign in">Sign In</Nav.Link>
+            <Nav.Link as={Link} to="/sign up">Sign Up</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    
+    
     </>
 
 	)

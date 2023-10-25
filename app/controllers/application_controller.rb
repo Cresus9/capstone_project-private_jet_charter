@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
 	end
 
 	def generate_token(member_id)
-		JWT.encode("member_id::member_id", get_secret_key)
+		JWT.encode({ member_id:member_id }, get_secret_key)
 	end
 
 	def decode_token(token)

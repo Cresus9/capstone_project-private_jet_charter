@@ -2,6 +2,8 @@ import React,{ useState } from 'react'
 import SignIn from './SignIn'
 import { useNavigate } from "react-router-dom";
 import './SignIn.css'
+import { Link } from "react-router-dom";
+
 
 
 
@@ -106,6 +108,10 @@ export default function SignUp({onLogin}) {
               <error key={err}>{err}</error>
             ))}
         </form>
+        <div className="signin-link">
+          <Link to="/sign in">Already have an account? Sign In</Link>
+        </div>
+
     </section>
 
 

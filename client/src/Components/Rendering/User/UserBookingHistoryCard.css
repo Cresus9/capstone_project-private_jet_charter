@@ -1,53 +1,54 @@
-.booking-display{
-    border: 2px solid rgb(53, 44, 44);
-    border-radius:10px;
-    padding: 30px;
-    display: block;
-    background-color: white;
-   
-
-}
-.location{
-    border: 1px solid rgb(216, 201, 201);
+.booking-display {
+    background: #f5f5f5;
+    padding: 1.5em;
     border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 2em auto;
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.location h6 {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.date-time {
     text-align: center;
-    padding: 15px;
+}
 
+.passenger-info {
+    text-align: right;
 }
-.location h6{
-    font-size: 23px;
-}
-.date{
-    border: 1px solid rgb(216, 201, 201);
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
 
+.passenger-count {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5em;
 }
-.date-span h6{
-    font-size: 23px;
-}
-.passenger{
-    border: 1px solid rgb(216, 201, 201);
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
 
-}
-.passenger h5{
-    font-size: 23px;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-.btn-manage{
-    background-color: rgb(102, 102, 199,0.4);
-    color: rgb(71, 71, 185);
-    border-radius: 10px;
-    font-size: 20px;
-
-}
-.btn-manage:hover{
-    background-color: blue;
+.btn-manage {
+    background-color: #007bff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
     color: white;
-   
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-manage:hover {
+    background-color: #0056b3;
+}
+
+.transition-arrow {
+    margin: 0 0.5em;
 }

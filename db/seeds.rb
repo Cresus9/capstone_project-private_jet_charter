@@ -21,6 +21,9 @@ Member.create(first_name:"Raina" ,last_name:"Derco" ,email:"raina@gmail.com" ,pa
 Jet.create(model:"Bombardier Global 5000" ,manufacturer:"Bombardier" ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/bombardier-global-express-5000-1.jpg" ,max_range:"5500" ,total_passenger:"17", speed:"530",price:"5600")
 Jet.create(model:"Gulfstream V" ,manufacturer:"Gulfstream " ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/gulfstream-v-7.jpg" ,max_range:"7300" ,total_passenger:"16" ,speed:"528",price:"5600")
 Jet.create(model:"Airbus A-319CJ" ,manufacturer:"Airbus" ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/airbus-a319-cj-3.jpg" ,max_range:"6897" ,total_passenger:"19" ,speed:"629",price:"5600")
+Jet.create(model:"Gulfstream IVSP" ,manufacturer:"Gulfstream Aerospace" ,image:"https://resources.globalair.com/specs/images/Jets/Gulfstream%20Aerospace/Gulfstream/IV/SP/Exterior/ext8.jpg?w=650&h=430&mode=max" ,max_range:"5700" ,total_passenger:"12", speed:"930",price:"5900")
+Jet.create(model:"Bombardier Global 6000" ,manufacturer:"Bombardier " ,image:"https://www.jftjet.com/wp-content/uploads/2022/02/01-BOMBARDIER-GLOBAL-6000-780x528.jpg" ,max_range:"8300" ,total_passenger:"14" ,speed:"728",price:"9300")
+Jet.create(model:"Bombardier Global Express XRS" ,manufacturer:"Bombardier" ,image:"https://images.aircharterservice.com/global/aircraft-guide/private-charter/global-express-xrs-8.png" ,max_range:"7897" ,total_passenger:"18" ,speed:"829",price:"8600")
 
 # Booking.create(total_passenger:"7",date:"10-25-2022", time:"09:30PM",from:"New York City",to:"Boston" is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
 Booking.create(total_passenger:"4",date:"10-29-2022", time:"10:00PM",from:"Miami",to:"New Haven" ,is_oneway:true ,member_id:Member.all.sample.id,jet_id:Jet.all.sample.id )
@@ -33,11 +36,4 @@ Passenger.create(first_name:"Thierry" ,last_name:"Yabre" ,email:"thierry@gmail.c
 Passenger.create(first_name:"Juste" ,last_name:"Peligrin" ,email:"juste@gmail.com" ,phone:"283-302-0032", birthdate:"01-23-1979", nationality:"french", member_id:Member.all.sample.id)
 
 
-# Departure.create(date:"10-25-2022", time:"09:30PM", location:"New York City", booking_id:Booking.all.sample.id)
-# Departure.create(date:"10-29-2022", time:"10:00PM", location:"Miami", booking_id:Booking.all.sample.id)
-# Departure.create(date:"10-30-2022", time:"11:00PM", location:"Columbus", booking_id:Booking.all.sample.id)
-
-# Arrival.create(date:"10-26-2022", time:"05:45AM" ,location:"Los Angeles", booking_id:Booking.all.sample.id)
-# Arrival.create(date:"10-29-2022", time:"11:55PM" ,location:"New York City", booking_id:Booking.all.sample.id)
-# Arrival.create(date:"10-30-2022", time:"11:00PM" ,location:"New Haven", booking_id:Booking.all.sample.id)
 
