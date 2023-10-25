@@ -6,7 +6,9 @@ import TimePicker from 'react-time-picker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from 'react-router-dom';
 
-export default function CreateBooking({user, bookings, setBookings,jets}) {
+function CreateBooking({user, bookings, setBookings,selectedJet}) {
+
+if (!selectedJet) return null;
 
 const navigate = useNavigate()
   // console.log(user)
@@ -23,6 +25,7 @@ const navigate = useNavigate()
   // const [startdate,setSartdate]=useState(new Date())
   const [bookedJet, setBookedJet]=useState([])
   const [bookedUser, setBookedUser]=useState([])
+  const [selectedJetName, setSelectedJetName] = useState("");
   // const [bookingForm, setBookingForm ]= useState(form)
   
   // console.log(date)
@@ -38,7 +41,7 @@ const navigate = useNavigate()
         time:time,
         to:to,
         from:from,
-        jet_id:jet_id,
+        jet_id:selectedJet.id,
         // member_id:member_id,
         total_passenger:total_passenger,
 
@@ -57,17 +60,23 @@ const navigate = useNavigate()
         if (res.ok) {
           res.json().then((booking) => {
             setBookings(booking);
+            navigate('/bookings/history')
           });
         } else {
-          res.json().then((errors) => console.log(errors));
+          return res.json().then((errors)=>{
+            console.log(errors);
+            alert("Failed to book.Please try again")
+          })
         }
       })
-      navigate('/bookings/history')
+
   }
   else {
     alert("Please, select your jet!")
   }
 }
+
+console.log("Jet Listings:", selectedJet);
 
 
 
@@ -75,75 +84,127 @@ const navigate = useNavigate()
   return (
     <>
     <section className='booking-form'>
-      <h2>Reserve your Jet here!</h2>
-        <form onSubmit={formHandler} className='booking_form'>
-          <span className='booking_form_input'>
-            <label>From : </label>
-                <select className='from-control' name="from" onChange={(e)=>setFrom(e.target.value)} >
-                <option value="">Select location</option>
-                <option>New York,NY USA</option>
-                    <option>Miami,FL USA</option>
-                    <option>Los Angeles,CA USA</option>
-                    <option>Columbus,OH USA</option>
-                    <option>Houston,TX USA</option>
-                    <option>Dallas,TX USA</option>
-                    <option>Chicago,IL USA</option>
-                    <option>Las Vegas,NV USA</option>
+    <h2>Reserve your Jet here!</h2>
+    <form onSubmit={formHandler} className='booking_form'>
+        
+        <div className='booking_form_input'>
+          
+            
+            {/* From Location */}
+            <div className="input-group">
+                <label>From: </label>
+                <select className='from-control' name="from" onChange={(e)=>setFrom(e.target.value)} required>
+                    <option value="" disabled selected>Select location</option>
+                    <option>New York, NY USA</option>
+                    <option>Los Angeles, CA USA</option>
+                    <option>Chicago, IL USA</option>
+                    <option>Houston, TX USA</option>
+                    <option>Phoenix, AZ USA</option>
+                    <option>Philadelphia, PA USA</option>
+                    <option>San Antonio, TX USA</option>
+                    <option>San Diego, CA USA</option>
+                    <option>Dallas, TX USA</option>
+                    <option>San Jose, CA USA</option>
+                    <option>Austin, TX USA</option>
+                    <option>Jacksonville, FL USA</option>
+                    <option>San Francisco, CA USA</option>
+                    <option>Columbus, OH USA</option>
+                    <option>Charlotte, NC USA</option>
+                    <option>Indianapolis, IN USA</option>
+                    <option>Seattle, WA USA</option>
+                    <option>Denver, CO USA</option>
+                    <option>Washington, D.C. USA</option>
+                    <option>Boston, MA USA</option>
+                    
+                    {/* ... other options */}
                 </select>
-                  <br/>
-              <label className='from-control' >To: </label>
+            </div>
+            
+            {/* To Location */}
+            <div className="input-group">
+                <label>To: </label>
+                <select className='from-control' name="to" onChange={(e)=>setTo(e.target.value)} required>
+                    <option value="" disabled selected>Select location</option>
+                    <option>New York, NY USA</option>
+                    <option>Los Angeles, CA USA</option>
+                    <option>Chicago, IL USA</option>
+                    <option>Houston, TX USA</option>
+                    <option>Phoenix, AZ USA</option>
+                    <option>Philadelphia, PA USA</option>
+                    <option>San Antonio, TX USA</option>
+                    <option>San Diego, CA USA</option>
+                    <option>Dallas, TX USA</option>
+                    <option>San Jose, CA USA</option>
+                    <option>Austin, TX USA</option>
+                    <option>Jacksonville, FL USA</option>
+                    <option>San Francisco, CA USA</option>
+                    <option>Columbus, OH USA</option>
+                    <option>Charlotte, NC USA</option>
+                    <option>Indianapolis, IN USA</option>
+                    <option>Seattle, WA USA</option>
+                    <option>Denver, CO USA</option>
+                    <option>Washington, D.C. USA</option>
+                    <option>Boston, MA USA</option>
 
-                  <select className='from-control' name="to" onChange={(e)=>setTo(e.target.value)}>
-                    <option value="">Select location</option>
-                    <option>New York,NY USA</option>
-                    <option>Miami,FL USA</option>
-                    <option>Los Angeles,CA USA</option>
-                    <option>Columbus,OH USA</option>
-                    <option>Houston,TX USA</option>
-                    <option>Dallas,TX USA</option>
-                    <option>Chicago,IL USA</option>
-                    <option>Las Vegas,NV USA</option>
-                  </select>
-                <br/>
-                <label >Date:</label>
-                <DatePicker selected={date} 
-                className={'from-date'}
-                onChange={(date)=>setDate(date)} />
-                <br/>
-                <label >Time:</label>
-                <TimePicker
-                value={time}
-                className={'from-control'}
-                onChange={(time)=>setTime(time)}  />
-                
-                <br/>
+                    {/* ... other options */}
+                </select>
+            </div>
+            
+            {/* Date Picker */}
+            <div className='input-group'>
+            <label>Date: </label>
+            <DatePicker 
+            selected={date} 
+            className='from-control' 
+            onChange={setDate} 
+            dateFormat="MMMM d, yyyy" 
+            required 
+            />
 
-              <label > Passenger:
-                <select className='from-control' name='total_passenger' onChange={(e)=>setTotal_passenger(e.target.value)}>
-                    <option value={total_passenger}>Select Travelers</option>
+            </div>
+            
+
+            
+            {/* Time Picker */}
+            <div className='input-group'>
+            <label>Time: </label>
+            <TimePicker value={time} className='from-control' onChange={setTime} format="hh:mm A" required />
+            </div>
+            
+
+            {/* Passenger count */}
+            <div className="input-group">
+                <label>Passenger: </label>
+                <select className='from-control' name='total_passenger' onChange={(e)=>setTotal_passenger(e.target.value)} required>
+                    <option value="" disabled selected>Select Travelers</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                     <option>6</option>
-                    <option>7</option>
-                  </select>
-   
-                </label>
-                <br/>
-                <label >Select jet:</label>
-                  <select className='from-control' name="jet_id" onChange={(e)=>setJet_id(e.target.value)}>
-                    <option >Select jet</option>
-                    <option key={jets[0].id} value= {jets[0].id} >{jets[0].model}</option>
-                    <option key={jets[1].id} value= {jets[1].id}>{jets[1].model}</option>
-                    <option key={jets[2].id} value= {jets[2].id}>{jets[2].model}</option>
-                  </select>
-                  <br/>
-              <button className='submit' type="submit">SUBMIT</button>
-          </span>
-        </form>
-    </section>
+                    
+                </select>
+            </div>
+            
+
+      <div className="input-group">
+            <label>JET:</label>
+            <span className='jet-display'>{selectedJet.model}</span>
+            {/* Hidden input to store the jet_id */}
+            <input type="hidden" name="jet_id" value={selectedJet.id} />
+        </div>
+            
+            {/* Submit Button */}
+            <button className='submit' type="submit">SUBMIT</button>
+            
+        </div>
+    </form>
+</section>
     </>
   )
   }
+  CreateBooking.defaultProps = {
+    jets: [],
+  };
+export default CreateBooking;

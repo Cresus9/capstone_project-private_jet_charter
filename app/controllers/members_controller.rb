@@ -36,7 +36,7 @@ class MembersController < ApplicationController
    
     member_id = decode_token(token)
     if member_id
-      render json: Member.find_by(member_id:params[:member_id])
+      render json: Member.find_by(member_id: member_id)
     else
       render json: {error: "401 incorrect token"}, status: 401
     end

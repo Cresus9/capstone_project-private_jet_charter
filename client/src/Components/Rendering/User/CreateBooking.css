@@ -1,116 +1,72 @@
-
-/* *{
-    background-color: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),url());
-    background-size: cover;
-    background-position: center;
-} */
-.booking-form{
-    /* background-color: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)); */
-
-    /* background-image:url('https://image.shutterstock.com/image-photo/aerial-sunset-view-over-blue-600w-1937284945.jpg'); */
-    /* display: grid;
-    margin: 20px;
-    padding: 20px;
-    width: 470px;
-    height: 450px;
-    border: 1px solid #ced4da */
-    background-color: white;
-    border: 3px solid rgb(245, 232, 232,0.7);
+.booking-form {
+    background-color: #f5f5f5;
     border-radius: 15px;
-   
-    box-shadow: 20px 20px 50px 10px rgb(49, 103, 222) inset;
-    height: 650px;
-    font-size: 22px;
-    width: 500px;
-    /* margin-right: 00px; */
-    margin: 20%;
-    padding-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    max-width: 700px;
+    margin: 3em auto;
+}
 
+h2 {
     text-align: center;
-    padding-bottom: 50px;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.booking_form {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    
-
-}
-.booking-form label{
-    margin: 5px 10px 5px 0;
-
-}
-.booking-form input{
-    vertical-align: middle;
-  margin: 5px 10px 5px 0;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-.booking-form h2{
-    /* background-color: white; */
-    padding-bottom: 10px;
-    border-radius: 2px;
-    text-align-last: center;
-    /* box-shadow: 20px 20px 50px grey */
-   
+    flex-direction: column;
 }
 
-    
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
 
+.input-group label {
+    margin-bottom: 0.5em;
+    color: #555;
+    font-weight: 600;
+}
 
-.from-control{
-    grid-row-start: auto;
+.from-control {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
 
+.from-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
+.submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
-.from-date{
-    display: inline;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-}
-.submit{
-    background-color: blue;
-    border: 10px;
-    border-radius: 10px;
-    color: white;
-    
-}
-.submit:hover{
-    background-color: white;
-    color: blue;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-/* .btn{
-    color: aqua;
-} */
-/* .booking-form{
-    padding: 0 20px 20px;
-}
-.booking-form label{
-    margin-bottom: 5px;
-    margin-top: 10px;
-    font-size: 12px;
-    color:#fff
-}
-input::placeholder{
-    color: #fff !important;
 
+.submit:hover {
+    background-color: #0056b3;
 }
-.form-control{
-    width: 151px;
-    display: inline-block;
-} */
 
-/* @media (max-width: 800px) {
-    .booking-form input {
-      margin: 10px 0;
+/* If using a mobile-first approach, consider adding media queries for larger screens */
+@media (min-width: 768px) {
+    .booking_form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    
-    .booking-form {
-      flex-direction: column;
-      align-items: stretch;
+
+    .input-group {
+        width: 48%; /* makes two input fields sit side by side */
     }
-  } */
+}
