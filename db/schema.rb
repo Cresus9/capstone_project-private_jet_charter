@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_27_021245) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_10_27_021245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,8 +23,8 @@ ActiveRecord::Schema.define(version: 2022_10_27_021245) do
     t.boolean "is_oneway"
     t.integer "member_id"
     t.integer "jet_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "jets", force: :cascade do |t|
@@ -35,8 +34,8 @@ ActiveRecord::Schema.define(version: 2022_10_27_021245) do
     t.integer "max_range"
     t.integer "total_passenger"
     t.integer "speed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "price"
   end
 
@@ -46,8 +45,8 @@ ActiveRecord::Schema.define(version: 2022_10_27_021245) do
     t.string "email"
     t.string "password_digest"
     t.string "phone_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -58,8 +57,8 @@ ActiveRecord::Schema.define(version: 2022_10_27_021245) do
     t.string "birthdate"
     t.string "nationality"
     t.integer "member_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
