@@ -7,7 +7,7 @@
 }
 
 .jet-top {
-    width: 90%; /* 90% of parent div */
+    width: 90%; 
     max-width: 1700px; /* Maximum width */
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
 }
 
 .jet_div {
-    width: 90%; /* 90% of parent div */
+    width: 90%; 
     max-width: 1800px; /* Maximum width */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* This creates a responsive grid for jet cards */

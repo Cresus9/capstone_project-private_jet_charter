@@ -31,7 +31,6 @@ const getList = listings.map((listing)=>
     <>
     <div className='all'>
       <div className='jet-top'>
-      {/* <h3>Choose your jet!</h3> */}
 
       </div>
       <div className='jet_div'>
