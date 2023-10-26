@@ -163,7 +163,6 @@ return (
           <Route path="/about" element={ <About />}/>
           <Route path="/sign in" element={ <SignIn logInData={logInData} signInUpdate={signInUpdate} submitlogInUpdate={submitlogInUpdate}/>}/>
           <Route path="/sign up" element={ <SignUp />}/>
-          <Route path="/jets" element={ <JetListings /> }/>
           <Route path="/" element={<>
             <NavBar />
             <Home />
