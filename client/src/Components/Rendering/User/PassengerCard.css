@@ -1,4 +1,4 @@
-/* Overall structure for the booking display */
+
 .booking-display {
     display: flex;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     justify-content: space-between;
 }
 
-/* Styling for different sections within the booking display */
+
 .location, .date, .passenger {
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
     width: 100%;
 }
 
-/* Titles, like "Booked by" */
+
 .booking-display span {
     font-size: 0.8rem;
     font-weight: 500;
@@ -36,7 +36,7 @@
     margin-top: 0.5rem;
 }
 
-/* Specific stylings for h5 and h6 for differentiation */
+
 .booking-display h5 {
     font-size: 1.2rem;
     margin-top: 0.5rem;

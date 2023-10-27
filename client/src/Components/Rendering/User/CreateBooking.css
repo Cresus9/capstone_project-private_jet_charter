@@ -58,7 +58,6 @@ h2 {
     background-color: #0056b3;
 }
 
-/* If using a mobile-first approach, consider adding media queries for larger screens */
 @media (min-width: 768px) {
     .booking_form {
         flex-direction: row;
@@ -67,6 +66,6 @@ h2 {
     }
 
     .input-group {
-        width: 48%; /* makes two input fields sit side by side */
+        width: 48%;
     }
 }

@@ -11,9 +11,9 @@
 }
 
 .jet_card_div {
-  flex: 2; /* Give more space to the image */
+  flex: 2; 
   overflow: hidden; 
-  position: relative; /* Added for the overlay to work */
+  position: relative; 
 }
 
 .jet_card_div::before {
@@ -24,11 +24,11 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.1); 
-  transition: background 0.3s ease; /* Smooth transition on hover */
+  transition: background 0.3s ease; 
 }
 
 .jet_card_div:hover::before {
-  background: rgba(0, 0, 0, 0.05); /* Lighter overlay on hover */
+  background: rgba(0, 0, 0, 0.05); 
 }
 
 .jet_card_div img {

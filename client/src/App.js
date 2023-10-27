@@ -157,7 +157,6 @@ return (
           <Route path="/profil" element={<>
           <Dashboard handleLogout={handleLogout}/>
           <Profil user={user} setUser={setUser} handleLogout={handleLogout} listings={content}  />
-          {/* <JetListings jets={setContent} bookme={bookme}/> */}
           <Footer />
           </>}/>
           <Route path="/about" element={ <About />}/>

@@ -1,23 +1,23 @@
 .signup_div {
 	max-width: 600px; 
-    background-color: #f9f9f9;  /* slightly lighter gray than sign in */
+    background-color: #f9f9f9;  
     padding: 40px;
     border-radius: 8px;
     max-width: 450px;
-    margin: 50px auto; /* centers the div on the page */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* adds a subtle shadow */
+    margin: 50px auto; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .signup_div h1 {
     text-align: center;
     margin-bottom: 25px;
-    color: #333;  /* dark gray */
+    color: #333;  
     font-size: 24px;
 }
 
 .signup_form {
     display: flex;
-    flex-direction: column;  /* stack the elements vertically */
+    flex-direction: column;  
 }
 
 .signup_form label {
@@ -28,35 +28,35 @@
 
 .sign {
     padding: 10px;
-    border: 1px solid #ccc;  /* grayish border */
+    border: 1px solid #ccc; 
     border-radius: 4px;
     margin-bottom: 20px;
     font-size: 16px;
-    outline: none;  /* remove blue outline on focus */
+    outline: none;  
 }
 
 .sign:focus {
-    border-color: #007bff;  /* blue border when focused */
+    border-color: #007bff;  
 }
 
 .signbtn {
-    background-color: #007bff;  /* blue */
-    color: #fff;  /* white text */
+    background-color: #007bff; 
+    color: #fff;  
     padding: 12px 15px;
     border: none;
     border-radius: 4px;
     font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;  /* smooth color transition */
+    transition: background-color 0.3s ease;  
 }
 
 .signbtn:hover {
-    background-color: #0056b3;  /* darker blue on hover */
+    background-color: #0056b3;  
 }
 
-error {
+.error {
     color: red;
     font-size: 14px;
     margin-top: 12px;
-    display: block;  /* make sure each error appears on a new line */
+    display: block;  
 }
