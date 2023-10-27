@@ -1,18 +1,13 @@
-/* .home_page{
-    height: 100%;
-	width: 100vw;
-	display: flex;
-} */
-/* General Reset */
+
 body, h1, h2, h3, h4, p, a {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* You can change this to your preferred font */
+    font-family: 'Arial', sans-serif; 
 }
 
-/* Alert Section */
+
 .alert-section {
-    background-color: #ff4b5c; /* Red shade. Adjust as per your design */
+    background-color: #ff4b5c; 
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -23,7 +18,7 @@ body, h1, h2, h3, h4, p, a {
     text-decoration: underline;
 }
 
-/* Home Section */
+
 .home {
     position: relative;
 	width: 100vw;
@@ -39,9 +34,9 @@ body, h1, h2, h3, h4, p, a {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Place the video behind content */
+    z-index: -1; 
     transform: translate(-50%, -50%);
-    object-fit: cover; /* Cover the entire container */
+    object-fit: cover; 
 }
 
 .overlay {
@@ -50,7 +45,7 @@ body, h1, h2, h3, h4, p, a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.6); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,31 +58,31 @@ body, h1, h2, h3, h4, p, a {
 }
 
 .overlay p {
-    color: #ccc; /* Light grey text */
+    color: #ccc; 
 }
 
-/* About Section */
+
 .about {
     padding: 20px 15px;
-    background-color: #f7f7f7; /* Light grey background */
+    background-color: #f7f7f7; 
 }
 
 .about_items {
     display: flex;
-    flex-wrap: wrap; /* Allows the items to wrap to next line on smaller screens */
-    gap: 15px; /* Spacing between items */
+    flex-wrap: wrap; 
+    gap: 15px; 
     justify-content: center;
 }
 
 .about_item {
-    flex: 1 1 calc(33.33% - 15px); /* Three items per row, accounting for gap */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow for each item box */
+    flex: 1 1 calc(33.33% - 15px); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
     padding: 15px;
-    background-color: #fff; /* White background for each item */
+    background-color: #fff; 
 }
 
 .about_item img {
-    max-width: 100%; /* Ensures the images don't overflow the div */
+    max-width: 100%; 
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -98,21 +93,21 @@ body, h1, h2, h3, h4, p, a {
 }
 
 .banner {
-    background-image: url('../assets/image/pics/home.jpg'); /* Add a background image for more visual appeal */
-    background-size: cover; /* Make sure the image covers the full div */
-    background-position: center; /* Center the image */
-    height: 400px; /* Adjust based on your design needs */
+    background-image: url('../assets/image/pics/home.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    height: 400px; 
     display: flex;
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
-    color: white; /* Assuming a darker background, adjust accordingly */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a subtle shadow for text readability */
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .banner-content h2 {
     font-size: 2em;
 	color: white;
-    margin-bottom: 0.5em; /* Adds a little space between the headings */
+    margin-bottom: 0.5em;
 }
 
 .banner-content h3 {
@@ -120,10 +115,10 @@ body, h1, h2, h3, h4, p, a {
 }
 
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .about_item {
-        flex: 1 1 100%; /* One item per row on tablet and smaller screens */
+        flex: 1 1 100%; 
     }
 }
 

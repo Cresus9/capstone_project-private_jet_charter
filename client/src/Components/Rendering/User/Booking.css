@@ -1,9 +1,9 @@
 .whole {
-    background-color: #f9f9f9;   /* A very light gray shade */
+    background-color: #f9f9f9;  
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* A soft shadow for depth */
-    margin: 20px 0;  /* Adds some margin top and bottom for spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    margin: 20px 0;
 }
 
 .whole h1 {
@@ -16,39 +16,14 @@
 
 
 .one:hover, .two:hover {
-    background-color: #d1d1d1;  /* Slightly darker gray on hover */
+    background-color: #d1d1d1; 
 }
-*/
+
 
 .upcoming, .history {
-    background-color: #ffffff;   /* White background */
+    background-color: #ffffff;  
     padding: 15px;
     margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);  /* Adds a subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); 
 }
-
-/* .whole{
-    border: 2px solid rgb(53, 44, 44);
-    border-radius:10px;
-    padding: 30px;
-    display: block;
-    background-color: white;
-
-}
-.whole h3{
-    font-size: 25px;
-    text-align: start;
-    color: rgb(28, 28, 154,0.6);
-}
-.whole h1{
-    font-size: 25px;
-    text-align: center;
-    color: black
-
-}.one{
-text-align: start;
-}
-.two{
-text-align: end;
-} */

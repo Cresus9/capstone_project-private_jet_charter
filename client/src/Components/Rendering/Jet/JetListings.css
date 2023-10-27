@@ -2,38 +2,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f5f5; /* Light gray background for better visual appeal */
+    background-color: #f5f5f5; 
     padding: 20px 0;
 }
 
 .jet-top {
     width: 90%; 
-    max-width: 1700px; /* Maximum width */
+    max-width: 1700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 2px solid #d4d4d4; /* Light gray border at the bottom of the header */
+    border-bottom: 2px solid #d4d4d4;
 }
 
 .jet-top h3 {
     font-size: 28px;
     font-weight: 600;
-    color: #333; /* Dark gray color for text */
-    margin: 0; /* Overriding default margins */
+    color: #333; 
+    margin: 0; 
 }
 
 .jet_div {
     width: 90%; 
-    max-width: 1800px; /* Maximum width */
+    max-width: 1800px; 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* This creates a responsive grid for jet cards */
-    gap: 20px; /* Gap between jet cards */
-    margin-top: 20px; /* Space from the header */
-    padding: 10px 0; /* Padding on top and bottom */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin-top: 20px; 
+    padding: 10px 0; 
 }
 
-/* This is just in case you have a button or any interactive element inside the jet-top */
+
 .jet-top button {
     padding: 8px 15px;
     background-color: #007bff;
@@ -45,5 +45,5 @@
 }
 
 .jet-top button:hover {
-    background-color: #0056b3; /* Darker blue for hover effect */
+    background-color: #0056b3; 
 }

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.21d46ac9.css",
+    "main.js": "/static/js/main.0d0d7d6d.js",
+    "static/media/shutterstock_747646759.jpg": "/static/media/shutterstock_747646759.c7c3c9daff4ad143e16c.jpg",
+    "static/media/shutterstock_683248198.jpg": "/static/media/shutterstock_683248198.7f0d705eac1bf1274cd6.jpg",
+    "static/media/shutterstock_1928348165.jpg": "/static/media/shutterstock_1928348165.8815fa9cc91fdf45ad84.jpg",
+    "static/media/shutterstock_1158453706.jpg": "/static/media/shutterstock_1158453706.67e5b72a9367fd212d35.jpg",
+    "static/media/home.jpg": "/static/media/home.ad1d63f0c78d5b5dd6f3.jpg",
+    "static/media/1046392675-sd.mov": "/static/media/1046392675-sd.3b2a668ef7c4c129e56c.mov",
+    "static/media/Screen Shot 2022-10-24 at 9.55.32 PM.png": "/static/media/Screen Shot 2022-10-24 at 9.55.32 PM.c4a164bd53616985849a.png",
+    "static/media/Screen Shot 2022-10-24 at 9.54.26 PM.png": "/static/media/Screen Shot 2022-10-24 at 9.54.26 PM.e1b3a4536e42ee87d7dd.png",
+    "static/media/Screen Shot 2022-10-24 at 9.56.49 PM.png": "/static/media/Screen Shot 2022-10-24 at 9.56.49 PM.06b81d9ced079803c263.png",
+    "static/media/pexels-ian-turnell-709552.jpg": "/static/media/pexels-ian-turnell-709552.4b8e944d434dca2cbcd7.jpg",
+    "static/media/pexels-asad-photo-maldives-1430676.jpg": "/static/media/pexels-asad-photo-maldives-1430676.063c1522cf91bd386c4e.jpg",
+    "index.html": "/index.html",
+    "main.21d46ac9.css.map": "/static/css/main.21d46ac9.css.map",
+    "main.0d0d7d6d.js.map": "/static/js/main.0d0d7d6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21d46ac9.css",
+    "static/js/main.0d0d7d6d.js"
+  ]
+}

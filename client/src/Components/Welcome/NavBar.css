@@ -1,30 +1,30 @@
-/* General styling for the navbar */
+
 .navbar {
-    font-family: 'Arial', sans-serif; /* Consider using a modern, readable font */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* subtle shadow to elevate navbar */
+    font-family: 'Arial', sans-serif; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Add some padding and styling to the navbar links */
+
 .navbar-nav .nav-link {
     padding-left: 20px;
     padding-right: 20px;
-    transition: color 0.3s ease-in-out; /* Smooth transition for link color change */
+    transition: color 0.3s ease-in-out; 
 }
 
-/* Change color when hovering over a navbar link */
+
 .navbar-nav .nav-link:hover {
-    color: #ff4500; /* Or another accent color of your choice */
+    color: #ff4500; 
 }
 
-/* Adjust the color of the current active link to help users know which page they're on */
+
 .navbar-nav .nav-link.active {
-    color: #ff4500; /* Or another accent color of your choice */
+    color: #ff4500; 
     font-weight: bold;
 }
 
-/* For the Navbar.Brand (usually the logo or app name) */
+
 .navbar-brand {
-    font-size: 24px; /* Size of the logo text or app name */
+    font-size: 24px; 
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -35,10 +35,9 @@
 
 
 
-/* Mobile specific styling */
+
 @media (max-width: 992px) {
-    /* Styling for mobile views if necessary */
     .navbar {
-        padding: 0.5rem 1rem; /* reduce padding for mobile */
+        padding: 0.5rem 1rem; 
     }
 }

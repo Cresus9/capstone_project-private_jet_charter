@@ -1,15 +1,15 @@
-/* Global styles */
+
 .edit_div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem; /* Reduced for smaller screens */
+    padding: 1rem; 
     max-width: 800px;
     margin: auto;
 }
 
 .moi {
-    font-size: 1.5rem; /* Reduced for smaller screens */
+    font-size: 1.5rem; 
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -23,8 +23,8 @@
 
 .edit_form label {
     font-weight: bold;
-    margin-top: 0.5rem; /* Reduced for smaller screens */
-    text-align: center; /* Centered for smaller screens */
+    margin-top: 0.5rem; 
+    text-align: center; 
 }
 
 .edit_form .sign {
@@ -36,7 +36,7 @@
 }
 
 .signbtn {
-    margin-top: 0.5rem; /* Reduced for smaller screens */
+    margin-top: 0.5rem; 
     padding: 0.5rem 1rem;
     background-color: #007BFF;
     color: white;
@@ -50,7 +50,7 @@
     background-color: #0056b3;
 }
 
-/* Media queries for larger screens */
+
 @media (min-width: 768px) {
     .edit_div {
         padding: 2rem;
@@ -62,7 +62,7 @@
 
     .edit_form label {
         margin-top: 1rem;
-        text-align: left; /* Aligned to left for larger screens */
+        text-align: left; 
     }
 
     .signbtn {
@@ -70,7 +70,7 @@
     }
 
     .edit_form {
-        width: 70%; /* Adjust as per your preference */
+        width: 70%; 
     }
 }
 
