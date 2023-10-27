@@ -88,6 +88,6 @@ test:
 production:
   <<: *default
   database: capstone_project_production
-  username: postgres
+  username: thierryyabre
   password: <%= ENV['CAPSTONE_PROJECT_DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOST'] %>
