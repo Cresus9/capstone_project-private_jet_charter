@@ -91,3 +91,5 @@ production:
   username: thierryyabre
   password: <%= ENV['CAPSTONE_PROJECT_DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOST'] %>
+  host: 192.168.1.145
+  port: 5432
