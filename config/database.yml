@@ -87,6 +87,18 @@ test:
 
 production:
   <<: *default
+<<<<<<< HEAD
+  database: capstone_project_production
+  username: postgres
+  password: <%= ENV['CAPSTONE_PROJECT_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+=======
   database: react_rails_api_project_template_production
   username: react_rails_api_project_template
   password: <%= ENV['REACT_RAILS_API_PROJECT_TEMPLATE_DATABASE_PASSWORD'] %>
+  host: 192.168.1.145
+  port: 5432
+
+>>>>>>> daf42bb9 (production host updated)
+
+
