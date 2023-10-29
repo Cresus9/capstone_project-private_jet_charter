@@ -91,3 +91,4 @@ production:
   database: capstone_project_production
   username: thierryyabre
   password: <%= ENV['CAPSTONE_PROJECT_DATABASE_PASSWORD'] %>
+  
