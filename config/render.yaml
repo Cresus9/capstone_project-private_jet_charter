@@ -1,0 +1,20 @@
+databases:
+  - name: capstone_project_production
+    databaseName: capstone_project_production
+    user: capstone_project_production
+
+services:
+  - type: web
+    name: capstone_project_production
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: capstone_project_production
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+      - key: RAILS_MASTER_KEY
+        value: 86556f4dc0d2aa6c8251b4983f5b4766
+        sync: false
