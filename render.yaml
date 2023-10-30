@@ -15,6 +15,5 @@ services:
           name: capstone_project_production
           property: connectionString
       - key: RAILS_MASTER_KEY
-      - key: RAILS_MASTER_KEY
         value: 86556f4dc0d2aa6c8251b4983f5b4766
         sync: false
